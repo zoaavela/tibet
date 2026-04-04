@@ -1,0 +1,474 @@
+/* Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,300;0,400;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap');
+
+:root {
+    --transition: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.home-wrapper {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    height: calc(100vh - 68px);
+    /* Soustrait la hauteur de la nav */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Utilitaires */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ── HERO ─────────────────────────────────────── */
+/* ── HERO IMMERSIF (FULL BACKGROUND) ────────── */
+/* ── HERO IMMERSIF (LAYOUT RAFFINÉ) ────────── */
+.hero-immersive {
+    height: 100%;
+    /* Occupe tout l'espace restant */
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url('../../assets/home/1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            transparent 40%,
+            transparent 80%,
+            var(--bg-primary) 100%);
+    z-index: 1;
+    transition: background 0.8s ease;
+}
+
+/* Version thème clair : dégradé plus subtil et aérien */
+[data-theme="light"] .hero-overlay {
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.15) 0%,
+            transparent 40%,
+            transparent 80%,
+            var(--bg-primary) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Bloc Gauche - Minimaliste et Informationnel */
+.hero-left-side {
+    position: absolute;
+    left: 4vw;
+    /* Un peu plus à gauche */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 480px;
+    text-align: left;
+}
+
+.hero-side-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    color: var(--accent, #A68966);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.hero-side-title {
+    font-family: var(--font-serif);
+    font-size: 4.8rem;
+    /* Augmenté */
+    font-weight: 300;
+    font-style: normal;
+    color: #ffffff;
+    /* Toujours blanc pour l'immersion */
+    margin-bottom: 2rem;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-side-desc {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    /* Quasi blanc pour l'immersion */
+    line-height: 1.8;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Bloc Centre - Monumental */
+.hero-center-box {
+    text-align: center;
+}
+
+.hero-main-title {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 15vw, 13rem);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 0.85;
+    color: #fff;
+    text-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: #ffffff;
+    /* Blanc aussi pour le scroll */
+    text-transform: uppercase;
+    opacity: 0.8;
+    z-index: 5;
+}
+
+.hero-scroll-line {
+    width: 1px;
+    height: 3rem;
+    background: linear-gradient(to bottom, var(--text-dim), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1.1);
+    }
+}
+
+/* ── SECTION COMMUNE (GRILLE STANDARD) ──────────── */
+.nav-section {
+    height: 100%;
+    /* Prend toute la hauteur du parent home-wrapper */
+    min-height: calc(100vh - 68px);
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    padding: 0 7vw;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.section-grid-standard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.num {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.45em;
+    color: var(--text-dim);
+    display: block;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.text-side h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(3.2rem, 6.5vw, 5.5rem);
+    /* Augmenté */
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.text-side p {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text-dim);
+    line-height: 2;
+    max-width: 380px;
+    margin-bottom: 3rem;
+}
+
+.explore-btn {
+    display: inline-flex;
+    padding: 0.875rem 1.75rem;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    transition: all 0.4s var(--transition);
+}
+
+.explore-btn:hover {
+    border-color: var(--text-primary);
+    color: var(--bg-primary);
+    background: var(--text-primary);
+}
+
+.image-side img {
+    width: 100%;
+    max-height: 75vh;
+    /* Limite la hauteur pour éviter le débordement vertical */
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.7) contrast(1.2);
+    transition: filter 0.6s var(--transition);
+}
+
+.image-side:hover img {
+    filter: grayscale(0%) brightness(1) contrast(1);
+    /* Révèle la couleur originale au survol */
+}
+
+/* ── SECTION 02 : PHURBA (CORRIGÉ, SANS FOND BOITE, AGRANDI) ─ */
+.section-objet {
+    background-color: var(--bg-secondary);
+    /* Conserve le fond pour le contraste */
+}
+
+.objet-clean-stacked-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Tout centrer horizontalement */
+    text-align: center;
+    gap: 3rem;
+    /* Espace réduit entre Titre, Image, Texte pour plus de proximité */
+}
+
+/* Titre principal Phurba : propre et centré */
+.section-main-title {
+    font-family: var(--font-serif);
+    font-size: clamp(4.5rem, 13vw, 11rem);
+    font-weight: 300;
+    color: var(--text-primary);
+    font-style: italic;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+/* Bloc Image : prend plus de place */
+.section-objet .image-side {
+    width: 100%;
+    max-width: 1100px;
+    padding: 0;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* museum-frame : supprime le fond noir, plus d'espace */
+.museum-frame img {
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    aspect-ratio: auto;
+    max-height: 55vh;
+    /* Animation de pulsation lumineuse automatique - Ralentie pour plus de subtilité */
+    animation: phurba-pulse 6s ease-in-out infinite;
+    filter: brightness(1);
+    transition: none;
+    /* Désactive les transitions de hover parent */
+}
+
+/* On désactive le hover pour la section phurba spécifiquement */
+.section-objet .image-side:hover img {
+    filter: brightness(1);
+    transform: none;
+}
+
+@keyframes phurba-pulse {
+
+    0%,
+    100% {
+        filter: brightness(1) drop-shadow(0 0 0px rgba(166, 137, 102, 0));
+        transform: scale(1);
+    }
+
+    50% {
+        filter: brightness(1.1) drop-shadow(0 0 20px rgba(166, 137, 102, 0.2));
+        transform: scale(1.01);
+    }
+}
+
+/* Bloc Texte : centré en dessous */
+.section-objet .content-box {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-objet .num {
+    margin-bottom: 1.5rem;
+}
+
+.section-objet .text-side p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    margin-bottom: 3rem;
+}
+
+/* ── FOOTER-DIVIDER ──────────────────────────── */
+.home-footer-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 7vw;
+}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+/* ── LAPTOP (Format Intermédiaire) ──────────── */
+@media (max-width: 1300px) {
+    .hero-side-title {
+        font-size: 3.8rem;
+        /* Scaled down from 4.8rem */
+    }
+
+    .hero-left-side {
+        width: 400px;
+        /* Moins large sur laptop */
+        left: 5vw;
+    }
+
+    .text-side h2 {
+        font-size: 3.5rem;
+        /* Scaled down */
+    }
+
+    .section-main-title {
+        font-size: clamp(3rem, 10vw, 8rem);
+    }
+}
+
+/* ── TABLETTE & MOBILE ─────────────────────── */
+@media (max-width: 900px) {
+    .home-wrapper {
+        height: auto;
+        overflow-y: visible;
+        scroll-snap-type: none;
+        /* Désactivé sur mobile pour éviter les blocages de lecture */
+    }
+
+    .hero-immersive {
+        height: 80vh;
+        background-attachment: scroll;
+        /* Performance mobile */
+    }
+
+    .hero-left-side {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        padding: 4rem 5vw;
+    }
+
+    .hero-side-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-side-desc {
+        font-size: 0.9rem;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .nav-section {
+        height: auto;
+        min-height: auto;
+        padding: 8vh 7vw;
+        flex-direction: column;
+    }
+
+    .section-grid-standard {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .text-side p {
+        margin: 0 auto 3rem;
+        max-width: 100%;
+    }
+
+    /* Section Phurba Mobile */
+    .objet-clean-stacked-layout {
+        gap: 2rem;
+        padding: 2rem 2vw;
+    }
+
+    .section-main-title {
+        font-size: 3.5rem;
+    }
+
+    .section-objet .image-side {
+        max-width: 100%;
+    }
+
+    .museum-frame img {
+        padding: 0;
+        max-height: 55vh;
+    }
+}

@@ -1,0 +1,160 @@
+/* ArchiveHub.css */
+
+.archive-hub-root {
+    width: 100%;
+    height: calc(100vh - 68px);
+    display: flex;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+}
+
+.archive-column {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: flex 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.5s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.archive-column:last-child {
+    border-right: none;
+}
+
+.archive-column::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+    /* Couleurs visibles mais sombres pour le texte */
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+/* Backgrounds */
+.col-galerie::before {
+    background-image: url('../../assets/archives/1.jpg');
+}
+
+.col-bibliographie::before {
+    background-image: url('../../assets/archives/2.jpg');
+}
+
+.col-glossaire::before {
+    background-image: url('../../assets/archives/3.jpg');
+}
+
+.archive-column:hover {
+    flex: 1.15;
+}
+
+.archive-column:hover::before {
+    filter: brightness(0.55) scale(1.04);
+}
+
+.archive-col-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 4rem;
+    max-width: 450px;
+    height: 300px;
+    /* Réduit pour rapprocher les boutons tout en gardant l'alignement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.archive-col-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.45em;
+    color: var(--accent, #A68966);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.archive-col-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+}
+
+.archive-col-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    transform: translateY(0);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-grow: 1;
+    /* Pushes the button to the bottom */
+}
+
+.archive-col-btn {
+    margin-top: auto;
+    /* Ensures button sticks to bottom of fixed container */
+    display: inline-flex;
+    padding: 1.1rem 2.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.archive-col-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .archive-column {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile & Tablette */
+@media (max-width: 900px) {
+    .archive-hub-root {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .archive-column {
+        height: 60vh;
+        flex: none !important;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .archive-col-desc {
+        opacity: 1;
+        transform: none;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+}

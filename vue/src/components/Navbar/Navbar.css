@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,300&family=Space+Mono:wght@400;700&family=Inter:wght@300;400&display=swap');
+
+.mh-root {
+    --mh-h: 68px;
+    --mh-font-serif: 'Bodoni Moda', Georgia, serif;
+    --mh-font-mono: 'Space Mono', 'Courier New', monospace;
+    --mh-font-sans: 'Inter', sans-serif;
+    background: var(--bg-primary, #080808);
+    color: var(--text-primary, #E3E0D8);
+    transition: background 0.8s ease, color 0.8s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.mh-root.hidden {
+    transform: translateY(-100%);
+}
+
+.mh-bar {
+    display: flex;
+    align-items: stretch;
+    height: var(--mh-h);
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    position: relative;
+}
+
+/* ── Logo ── */
+.mh-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 2rem;
+    border-right: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    background: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    cursor: pointer;
+    font-family: var(--mh-font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent, #A68966);
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.mh-logo:hover {
+    opacity: 0.7;
+}
+
+.mh-logo svg {
+    flex-shrink: 0;
+}
+
+/* ── Nav links ── */
+.mh-nav {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+}
+
+.mh-link {
+    display: flex;
+    align-items: center;
+    padding: 0 1.8rem;
+    border: none;
+    border-right: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    background: none;
+    cursor: pointer;
+    font-family: var(--mh-font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim, #999);
+    transition: color 0.25s, background 0.25s;
+    position: relative;
+    white-space: nowrap;
+}
+
+.mh-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent, #A68966);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.mh-link:hover {
+    color: var(--text-primary, #E3E0D8);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.mh-link:hover::after,
+.mh-link.active::after {
+    transform: scaleX(1);
+}
+
+.mh-link.active {
+    color: var(--accent, #A68966);
+}
+
+/* ── Right cluster ── */
+.mh-right {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-left: auto;
+    border-left: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+}
+
+.mh-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--mh-h);
+    padding: 0 2.5rem;
+    background: none;
+    border: none;
+    border-left: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    cursor: pointer;
+    font-family: var(--mh-font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim, #999);
+    transition: color 0.25s, background 0.25s;
+    white-space: nowrap;
+}
+
+.mh-btn:hover {
+    color: var(--text-primary, #E3E0D8);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.mh-btn:first-child {
+    border-left: none;
+}
+
+/* Fin des styles de droite */
+
+/* ── Mega panel ── */
+.mh-mega {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-primary, #080808);
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: 200;
+}
+
+.mh-mega.open {
+    max-height: 600px;
+    opacity: 1;
+}
+
+.mh-mega-inner {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mh-mega-desc {
+    padding-right: 3rem;
+    border-right: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+}
+
+.mh-mega-label {
+    font-family: var(--mh-font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent, #A68966);
+    margin-bottom: 1rem;
+}
+
+.mh-mega-title {
+    font-family: var(--mh-font-serif);
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--text-primary, #E3E0D8);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.mh-mega-text {
+    font-family: var(--mh-font-sans);
+    font-size: 0.72rem;
+    color: var(--text-dim, #999);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.mh-mega-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 3rem;
+    gap: 0;
+}
+
+.mh-mega-item {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    border-right: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    cursor: pointer;
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-family: var(--mh-font-sans);
+    transition: background 0.2s;
+    position: relative;
+    text-decoration: none;
+}
+
+.mh-mega-item:hover {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.mh-mega-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--accent, #A68966);
+    transition: width 0.2s;
+}
+
+.mh-mega-item:hover::before {
+    width: 1.5px;
+}
+
+.mh-mega-num {
+    font-family: var(--mh-font-mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    color: var(--accent, #A68966);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.mh-mega-name {
+    font-family: var(--mh-font-serif);
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-primary, #E3E0D8);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.mh-mega-sub {
+    font-family: var(--mh-font-mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.1em;
+    color: var(--text-dim, #999);
+    text-transform: uppercase;
+}
+
+/* ── Light mode overrides ── */
+[data-theme="light"] .mh-root {
+    --bg-primary: #F9F7F2;
+    --text-primary: #1A1A1A;
+    --text-dim: #888;
+    --accent: #8E2922;
+    --border: rgba(0, 0, 0, 0.1);
+}

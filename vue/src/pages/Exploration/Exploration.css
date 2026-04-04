@@ -1,0 +1,305 @@
+/* Exploration.css */
+
+.explore-page-snap-container {
+    width: 100%;
+    background-color: var(--bg-primary);
+    height: calc(100vh - 68px); /* Soustrait la Navbar */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- Section 3D --- */
+.explore-3d-scene {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Remplit le container snap */
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+    z-index: 1;
+    scroll-snap-align: start;
+}
+
+.canvas-3d {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.canvas-3d:active {
+    cursor: grabbing;
+}
+
+.explore-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8vh 7vw;
+    z-index: 10;
+}
+/* --- HOTSPOTS / CARDS --- */
+
+.point-card {
+    pointer-events: auto;
+    align-self: flex-end;
+    max-width: 320px;
+    background: var(--bg-primary); /* Adapté au thème */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Subtile ombre pour détacher en mode clair */
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.point-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.point-card p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+.point-card button {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.point-card button:hover {
+    opacity: 1;
+}
+
+.glow-dot {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .glow-dot {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.glow-dot:hover,
+.glow-dot.active {
+    background-color: var(--accent, #A68966);
+    transform: scale(1.4);
+    box-shadow: 0 0 25px rgba(166, 137, 102, 0.4);
+    border-color: #fff;
+}
+
+.drag-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: color-mix(in srgb, var(--text-primary) 60%, transparent);
+    pointer-events: none;
+    z-index: 5;
+    transition: opacity 1s ease;
+}
+
+.drag-hint.hidden {
+    opacity: 0;
+}
+
+.drag-icon {
+    font-size: 2rem;
+    font-weight: 300;
+    animation: swipeHand 2s infinite ease-in-out;
+}
+
+.drag-hint span {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* Suggestion du scroll au bas de la section 3D */
+.explore-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    z-index: 10;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 2.5rem;
+    background: linear-gradient(to bottom, var(--text-dim), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* --- Section Article (Style Documentaire / Musée) --- */
+.explore-article {
+    height: 100%; /* Prend toute la hauteur du parent snap */
+    display: flex;
+    align-items: center;
+    padding: 0 7vw;
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border);
+    scroll-snap-align: start;
+}
+
+.article-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: start;
+}
+
+.article-meta {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.article-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-primary);
+    max-width: 500px;
+}
+
+.article-intro {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+}
+
+.article-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.article-text p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+}
+
+.article-text em {
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .article-inner {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .article-title {
+        max-width: 100%;
+    }
+}
+
+/* --- Footer intégré --- */
+.explore-footer-wrapper {
+    width: 100%;
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border);
+    scroll-snap-align: end; /* Permet d'aimanter le bas du footer à la fin du scroll */
+}
+
+/* --- Animations & Media Queries --- */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes swipeHand {
+    0% {
+        transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .point-card {
+        align-self: center;
+        margin-bottom: 5vh;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .article-title {
+        font-size: 3rem;
+    }
+
+    .article-lead {
+        font-size: 1.5rem;
+    }
+}

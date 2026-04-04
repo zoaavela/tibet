@@ -1,0 +1,62 @@
+/* src/Theme.css */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300..400;1,6..96,300..400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&family=DM+Sans:wght@300;400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* Variables typographiques recommandées par la charte Musée */
+  --font-serif: 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  
+  /* Transition globale pour l'effet "méditatif" */
+  --theme-transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out, border-color 0.8s ease-in-out;
+}
+
+/* Base Theme (Dark par défaut) */
+body, [data-theme="dark"] {
+  --bg-primary: #080808;
+  --bg-secondary: #0c0c0c;
+  --text-primary: #E3E0D8;
+  --text-dim: #999999;
+  --accent: #A68966;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: #F9F7F2;
+  --bg-secondary: #F0EDE5;
+  --text-primary: #1A1A1A;
+  --text-dim: #666666;
+  --accent: #8E2922;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+/* --- MUSEUM LABEL CARTRIDGE --- */
+.museum-label {
+  max-width: 400px;
+  margin-bottom: 8vh;
+}
+
+.label-meta {
+  display: flex;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.label-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.label-divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--accent);
+}

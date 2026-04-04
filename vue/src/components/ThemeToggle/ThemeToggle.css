@@ -1,0 +1,19 @@
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: color 0.4s var(--theme-transition, ease);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--text-primary);
+}
