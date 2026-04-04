@@ -20,10 +20,10 @@ function AppContent() {
   const location = useLocation();
   const showNavbar = location.pathname !== "/";
   /* On cache le footer global sur les pages immersives qui gèrent leur propre scroll-snap */
-  const showFooter = location.pathname !== "/" && 
-                     location.pathname !== "/accueil" && 
-                     location.pathname !== "/archives" && 
-                     location.pathname !== "/exploration";
+  const showFooter = location.pathname !== "/" &&
+    location.pathname !== "/accueil" &&
+    location.pathname !== "/archives" &&
+    location.pathname !== "/exploration";
 
   // --- Scroll to top or to anchor on route change (Support pour Snap Containers) ---
   useEffect(() => {
@@ -37,7 +37,7 @@ function AppContent() {
         }
       }
     }
-    
+
     // Remonte page (Gère window et les conteneurs snap spécifiques)
     window.scrollTo(0, 0);
     const snapContainer = document.querySelector('.explore-page-snap-container, .home-wrapper');
@@ -75,7 +75,7 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/tibet/">
         <AppContent />
       </BrowserRouter>
     </ThemeProvider>
