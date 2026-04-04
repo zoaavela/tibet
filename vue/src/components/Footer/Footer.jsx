@@ -50,12 +50,20 @@ export default function Footer() {
                         <Link to="/accueil" className="footer-link">Accueil</Link>
                     </div>
  
-                    {/* Ressources */}
+                    {/* Savoirs */}
                     <div className="footer-column">
                         <span className="footer-label">Savoirs</span>
                         <Link to="/galerie" className="footer-link">Galerie Media</Link>
                         <Link to="/sources" className="footer-link">Bibliographie</Link>
                         <Link to="/glossaire" className="footer-link">Glossaire</Link>
+                    </div>
+
+                    {/* Auteurs */}
+                    <div className="footer-column">
+                        <span className="footer-label">Auteurs</span>
+                        <span className="footer-author">Soumiyya Gbadagni</span>
+                        <span className="footer-author">Enzo Abdi</span>
+                        <span className="footer-author">Charly Janvier</span>
                     </div>
                 </div>
 

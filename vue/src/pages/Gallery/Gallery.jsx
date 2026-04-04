@@ -83,7 +83,7 @@ export default function Gallery() {
                     <span className="label-number">00</span>
                     <span className="label-category">EXPOSITION</span>
                 </div>
-                <h1 className="label-title">Archives</h1>
+                <h1 className="label-title">Galerie</h1>
                 <div className="label-divider"></div>
             </div>
 

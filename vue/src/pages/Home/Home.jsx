@@ -114,7 +114,7 @@ export default function Home() {
                                 sources bibliographiques et archives multimédia. Le socle de notre immersion
                                 au cœur de la civilisation tibétaine.
                             </p>
-                            <Link to="/galerie" className="explore-btn">Consulter les archives</Link>
+                            <Link to="/archives" className="explore-btn">Consulter les archives</Link>
                         </div>
                     </div>
                 </div>

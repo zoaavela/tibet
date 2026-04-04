@@ -89,6 +89,16 @@
     color: var(--accent);
 }
 
+.footer-author {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    opacity: 0.8;
+    margin-bottom: -0.2rem;
+}
+
 /* --- ACTION --- */
 .footer-action {
     display: flex;
