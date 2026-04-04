@@ -1,33 +1,42 @@
 import React from 'react';
 import './Society.css';
+import image1 from './assets/culture/society/animals/1.png';
+import image2 from './assets/culture/society/animals/2.png';
+import image3 from './assets/culture/society/animals/3.jpg';
+import image4 from './assets/culture/society/animals/4.jpg';
+import image5 from './assets/culture/society/drogpa/1.avif';
+import image6 from './assets/culture/society/gastronomie/1.jpg';
+import image7 from './assets/culture/society/gastronomie/2.jpg';
+import image8 from './assets/culture/society/climat/1.jpg';
+import image9 from './assets/culture/society/1.png';
 
 const faunaAnimals = [
     {
         id: 1,
         commonName: 'Panthère des Neiges',
         scientificName: 'Panthera Uncia',
-        image: 'src/assets/culture/society/animals/1.png',
+        image: image1,
         description: 'Ses larges cavités nasales réchauffent l\'air glacial avant qu\'il n\'atteigne ses poumons. Sa queue d\'un mètre lui sert de balancier sur les falaises et de couverture thermique isolante.',
     },
     {
         id: 2,
         commonName: 'Antilope Tibétaine',
         scientificName: 'Pantholops Hodgsonii',
-        image: 'src/assets/culture/society/animals/2.png',
+        image: image2,
         description: 'Capable de courir à 80 km/h à plus de 5 000 mètres. Elle possède un sous-poil extrêmement dense (shahtoosh) pour survivre au gel, ce qui en fait une espèce vulnérable au braconnage.',
     },
     {
         id: 3,
         commonName: 'Grue à cou noir',
         scientificName: 'Grus Nigricollis',
-        image: 'src/assets/culture/society/animals/3.jpg',
+        image: image3,
         description: 'La seule espèce de grue évoluant et se reproduisant en très haute altitude. Ses migrations saisonnières sont un indicateur biologique majeur pour les populations agro-pastorales.',
     },
     {
         id: 4,
         commonName: 'Yak',
         scientificName: 'Bos Mutus',
-        image: 'src/assets/culture/society/animals/4.jpg',
+        image: image4,
         description: 'Emblème du plateau tibétain, le yak sauvage peut peser jusqu\'à 1 200 kg. Ses poumons surdéveloppés et son sang riche en hémoglobine lui permettent de survivre à des altitudes dépassant 5 000 mètres.',
     }
 ];
@@ -44,10 +53,10 @@ const Society = () => {
                     </p>
                 </div>
                 <div className="soc-hero-image-container">
-                    <img 
-                        src="src/assets/culture/society/1.png" 
-                        alt="Terres Vivantes" 
-                        className="soc-hero-bg-image" 
+                    <img
+                        src={image9}
+                        alt="Terres Vivantes"
+                        className="soc-hero-bg-image"
                         fetchpriority="high"
                         loading="eager"
                         decoding="async"
@@ -69,9 +78,9 @@ const Society = () => {
 
                 <div className="editorial-feature">
                     <figure className="feature-hero-img">
-                        <img 
-                            src="src/assets/culture/society/drogpa/1.avif" 
-                            alt="Campement nomade" 
+                        <img
+                            src={image5}
+                            alt="Campement nomade"
                             loading="lazy"
                             decoding="async"
                         />
@@ -133,9 +142,9 @@ const Society = () => {
 
                     <div className="editorial-split-block">
                         <figure className="split-image">
-                            <img 
-                                src="src/assets/culture/society/gastronomie/1.jpg" 
-                                alt="Momos vapeurs" 
+                            <img
+                                src={image6}
+                                alt="Momos vapeurs"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -148,9 +157,9 @@ const Society = () => {
 
                     <div className="editorial-split-block reverse">
                         <figure className="split-image">
-                            <img 
-                                src="src/assets/culture/society/gastronomie/2.jpg" 
-                                alt="Préparation du Po Cha" 
+                            <img
+                                src={image7}
+                                alt="Préparation du Po Cha"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -172,10 +181,10 @@ const Society = () => {
                 </div>
 
                 <div className="dossier-intro">
-                    <img 
-                        src="src/assets/culture/society/climat/1.jpg" 
-                        alt="Glaciers himalayens" 
-                        className="dossier-hero-img" 
+                    <img
+                        src={image8}
+                        alt="Glaciers himalayens"
+                        className="dossier-hero-img"
                         loading="lazy"
                         decoding="async"
                     />
