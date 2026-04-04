@@ -15,7 +15,7 @@ const AILES = [
     },
     {
         id: "society",
-        label: "Society",
+        label: "Société",
         desc: "L'adaptation au Vivant : nomadisme Drogpa, gastronomie d'altitude et l'écologie du 3ème Pôle.",
         pages: [
             { id: "society", num: "02", label: "Terres Vivantes" },
@@ -23,7 +23,7 @@ const AILES = [
     },
     {
         id: "chronicles",
-        label: "Chronicles",
+        label: "Chroniques",
         desc: "Le Récit des temps : de la fureur martiale du Yarlung à l'épopée de Gesar et l'architecture des Dzongs.",
         pages: [
             { id: "chronicles", num: "03", label: "Le Toit du Monde" },
