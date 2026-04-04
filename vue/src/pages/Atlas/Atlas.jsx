@@ -6,11 +6,9 @@ import image1 from '../../assets/culture/atlas/sowa-rigpa/1.jpg';
 import image2 from '../../assets/culture/atlas/sowa-rigpa/2.avif';
 import image3 from '../../assets/culture/atlas/sowa-rigpa/3.jpg';
 import image4 from '../../assets/culture/atlas/artisanat/1.avif';
-import image5 from '../../assets/culture/atlas/artisanat/2.jpg';
-import image6 from '../../assets/culture/atlas/artisanat/3.jpg';
-import image7 from '../../assets/culture/atlas/astronomie/1.avif';
-import image8 from '../../assets/culture/atlas/astronomie/2.avif';
-import image9 from '../../assets/culture/atlas/astronomie/3.avif';
+import image5 from '../../assets/culture/atlas/artisanat/2.avif';
+import image6 from '../../assets/culture/atlas/langage/1.webp';
+import image7 from '../../assets/culture/atlas/langage/2.webp';
 
 const Atlas = () => {
     return (
@@ -189,7 +187,7 @@ const Atlas = () => {
 
                 <div className="atlas-content-flow">
                     <div className="atlas-narrative-block">
-                        <img src={image7} alt="Calligraphie tibétaine" className="block-image" />
+                        <img src={image6} alt="Calligraphie tibétaine" className="block-image" />
                         <div className="block-text overlap-left">
                             <p>Une langue manufacturée. L'alphabet syllabique fut techniquement compilé au VIIe siècle par ordonnance du Roi.</p>
                             <p>Naviguant entre la rigueur angulaire des textes Uchen, ligne maîtresse imprimée, et la fluidité de la main Ume, sans ligne supérieure.</p>
@@ -202,7 +200,7 @@ const Atlas = () => {
                             <p>Dessiner un Thangka ne laisse aucune place à l'intuition artistique émotive. C'est une ingénierie dogmatique absolue pilotée par l'iconométrie.</p>
                             <p>La grille pré-construite fixe mathématiquement le moindre pli oculaire. Une seule proportion disloquée invalide instantanément la toile.</p>
                         </div>
-                        <img src={image8} alt="Grille iconométrique" />
+                        <img src={image7} alt="Grille iconométrique" />
                     </div>
 
                     <div className="atlas-horizontal-gallery">
