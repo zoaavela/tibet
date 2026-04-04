@@ -1,55 +1,63 @@
 // Sources.jsx
 import { useRef, useEffect, useState, useCallback } from "react";
 import "./Sources.css";
+import image1 from '../../assets/archives/books/1.avif';
+import image2 from '../../assets/archives/books/2.avif';
+import image3 from '../../assets/archives/books/3.avif';
+import image4 from '../../assets/archives/books/4.avif';
+import image5 from '../../assets/archives/books/5.avif';
+import image6 from '../../assets/archives/books/6.avif';
+import image7 from '../../assets/archives/books/7.avif';
+import image8 from '../../assets/archives/books/8.avif';
 
 const BOOKS = [
     {
         author: "Robert Beer",
         title: "The Encyclopedia of Tibetan Symbols and Motifs",
         details: "Boston : Shambhala Publications, 1999.",
-        cover: "src/assets/archives/books/1.avif"
+        cover: image1
     },
     {
         author: "Robert Beer",
         title: "The Handbook of Tibetan Buddhist Symbols",
         details: "Londres : Serindia Publications, 2003.",
-        cover: "src/assets/archives/books/2.avif"
+        cover: image2
     },
     {
         author: "A.-M. Blondeau & K. Buffetrille",
         title: "Le Tibet est-il chinois ?",
         details: "Paris : Albin Michel, 2002.",
-        cover: "src/assets/archives/books/3.avif"
+        cover: image3
     },
     {
         author: "Philippe Cornu",
         title: "Dictionnaire encyclopédique du bouddhisme",
         details: "Paris : Le Seuil, 2006 (1ère éd. 2001).",
-        cover: "src/assets/archives/books/4.avif"
+        cover: image4
     },
     {
         author: "Arnaud Desjardins",
         title: "Le Message des Tibétains : Le vrai visage du tantrisme",
         details: "Paris : La Table Ronde, 1981.",
-        cover: "src/assets/archives/books/5.avif"
+        cover: image5
     },
     {
         author: "Robert N. Linrothe",
         title: "Ruthless Compassion: Wrathful Deities",
         details: "Londres : Serindia Publications, 1999.",
-        cover: "src/assets/archives/books/6.avif"
+        cover: image6
     },
     {
         author: "Rob Preece",
         title: "The Psychology of Buddhist Tantra",
         details: "Ithaca : Snow Lion Publications, 2006.",
-        cover: "src/assets/archives/books/7.avif"
+        cover: image7
     },
     {
         author: "Rolf Alfred Stein",
         title: "La Civilisation tibétaine",
         details: "Paris : L'Asiathèque, 2011 (1ère éd. 1962).",
-        cover: "src/assets/archives/books/8.avif"
+        cover: image8
     }
 ];
 

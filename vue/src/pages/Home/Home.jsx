@@ -2,6 +2,9 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import image1 from '../../assets/home/2.avif';
+import image2 from '../../assets/home/3.png';
+import image3 from '../../assets/home/4.avif';
 
 export default function Home() {
     return (
@@ -46,7 +49,7 @@ export default function Home() {
                     </div>
                     <div className="image-side">
                         <img
-                            src="src/assets/home/2.avif"
+                            src={image1}
                             alt="Paysage et monastère tibétain"
                             loading="lazy"
                             decoding="async"
@@ -65,7 +68,7 @@ export default function Home() {
                     {/* 2. Bloc Image : Juste en dessous du mot Phurba, sans fond, plus grand */}
                     <div className="image-side museum-frame">
                         <img
-                            src="src/assets/home/3.png"
+                            src={image2}
                             alt="Phurba — Dague rituelle du Vajrayāna"
                             loading="lazy"
                             decoding="async"
@@ -96,7 +99,7 @@ export default function Home() {
                 <div className="section-grid-standard">
                     <div className="image-side">
                         <img
-                            src="src/assets/home/4.avif"
+                            src={image3}
                             alt="Manuscrits et archives tibétaines"
                             loading="lazy"
                             decoding="async"

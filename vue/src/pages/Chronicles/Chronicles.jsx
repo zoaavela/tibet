@@ -1,6 +1,15 @@
 import React from 'react';
 import './Chronicles.css';
 
+import hero from '../../assets/culture/chronicles/1.jpg';
+import image1 from '../../assets/culture/chronicles/empire/1.avif';
+import image2 from '../../assets/culture/chronicles/empire/2.png';
+import image3 from '../../assets/culture/chronicles/gesar/1.jpg';
+import image4 from '../../assets/culture/chronicles/gesar/2.jpg';
+import image5 from '../../assets/culture/chronicles/architecture/1.avif';
+import image6 from '../../assets/culture/chronicles/architecture/2.avif';
+import image7 from '../../assets/culture/chronicles/architecture/3.webp';
+
 const Chronicles = () => {
     return (
         <main className="chronicle-container page-fade-in">
@@ -11,10 +20,10 @@ const Chronicles = () => {
                     <p className="chr-hero-subtitle">Une exploration narrative du Tibet antique : de la fureur martiale du Yarlung à l'ingénierie minérale du Potala.</p>
                 </div>
                 <div className="chr-hero-image-container">
-                    <img 
-                        src="src/assets/culture/chronicles/1.jpg" 
-                        alt="Le Toit du Monde" 
-                        className="chr-hero-bg-image" 
+                    <img
+                        src={hero}
+                        alt="Le Toit du Monde"
+                        className="chr-hero-bg-image"
                         fetchpriority="high"
                         loading="eager"
                         decoding="async"
@@ -40,9 +49,9 @@ const Chronicles = () => {
 
                     <div className="chapter-content">
                         <figure className="narrative-figure full-bleed">
-                            <img 
-                                src="src/assets/culture/chronicles/empire/1.avif" 
-                                alt="Forteresse historique" 
+                            <img
+                                src={image1}
+                                alt="Forteresse historique"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -83,9 +92,9 @@ const Chronicles = () => {
                         </div>
 
                         <div className="narrative-split">
-                            <img 
-                                src="src/assets/culture/chronicles/empire/2.png" 
-                                alt="Détails d'armes anciennes" 
+                            <img
+                                src={image2}
+                                alt="Détails d'armes anciennes"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -108,9 +117,9 @@ const Chronicles = () => {
 
                     <div className="chapter-content">
                         <figure className="narrative-figure side-image">
-                            <img 
-                                src="src/assets/culture/chronicles/gesar/1.jpg" 
-                                alt="Gesar Thangka" 
+                            <img
+                                src={image3}
+                                alt="Gesar Thangka"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -124,10 +133,10 @@ const Chronicles = () => {
                             <h3>Les Bardes Analphabètes</h3>
                             <p>Le mystère cognitif des <em>Babdrung</em> : ces passeurs de mythologie sont très souvent dépourvus d'éducation textuelle.</p>
                             <p>Leur récitation titanesque se fait au gré d'une transe. Ils ne mémorisent pas. Ils rapportent lire des "images ou projections" défilant dans leur rétine au rythme de l'histoire.</p>
-                            <img 
-                                src="src/assets/culture/chronicles/gesar/2.jpg" 
-                                alt="Barde en transe" 
-                                className="inline-img" 
+                            <img
+                                src={image4}
+                                alt="Barde en transe"
+                                className="inline-img"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -169,9 +178,9 @@ const Chronicles = () => {
 
                     <div className="chapter-content">
                         <figure className="narrative-figure full-bleed overlap-top">
-                            <img 
-                                src="src/assets/culture/chronicles/architecture/1.avif" 
-                                alt="Palais du Potala" 
+                            <img
+                                src={image5}
+                                alt="Palais du Potala"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -185,10 +194,10 @@ const Chronicles = () => {
                             <h3>La Physique de la Forteresse</h3>
                             <p>Bâtir sur le plateau tibétain implique de composer avec des contraintes majeures : une forte activité sismique, des vents violents, une amplitude thermique extrême et la rareté du bois.</p>
                             <p>Le résultat est le <strong>Dzong</strong> (forteresse-monastère) et les habitations en pisé. Leur caractéristique la plus frappante est la géométrie trapézoïdale : des murs massifs à la base qui s'affinent vers le sommet.</p>
-                            <img 
-                                src="src/assets/culture/chronicles/architecture/2.avif" 
-                                alt="Murs inclinés d'une forteresse" 
-                                className="inline-img large" 
+                            <img
+                                src={image6}
+                                alt="Murs inclinés d'une forteresse"
+                                className="inline-img large"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -219,9 +228,9 @@ const Chronicles = () => {
                         </div>
 
                         <div className="narrative-split reverse">
-                            <img 
-                                src="src/assets/culture/chronicles/architecture/3.webp" 
-                                alt="Détail de toit en aga" 
+                            <img
+                                src={image7}
+                                alt="Détail de toit en aga"
                                 loading="lazy"
                                 decoding="async"
                             />
