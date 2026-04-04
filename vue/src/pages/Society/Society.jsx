@@ -4,7 +4,7 @@ import image1 from '../../assets/culture/society/animals/1.png';
 import image2 from '../../assets/culture/society/animals/2.png';
 import image3 from '../../assets/culture/society/animals/3.jpg';
 import image4 from '../../assets/culture/society/animals/4.jpg';
-import image5 from '../../assets/culture/society/drogpa/1.png';
+import image5 from '../../assets/culture/society/drogpa/1.jpg';
 import image6 from '../../assets/culture/society/gastronomie/1.jpg';
 import image7 from '../../assets/culture/society/gastronomie/2.jpg';
 import image8 from '../../assets/culture/society/climat/1.jpg';
