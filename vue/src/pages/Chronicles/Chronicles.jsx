@@ -4,7 +4,7 @@ import './Chronicles.css';
 import hero from '../../assets/culture/chronicles/1.jpg';
 import image1 from '../../assets/culture/chronicles/empire/1.avif';
 import image2 from '../../assets/culture/chronicles/empire/2.png';
-import image3 from '../../assets/culture/chronicles/gesar/1.jpg';
+import image3 from '../../assets/culture/chronicles/gesar/1.avif';
 import image4 from '../../assets/culture/chronicles/gesar/2.jpg';
 import image5 from '../../assets/culture/chronicles/architecture/1.avif';
 import image6 from '../../assets/culture/chronicles/architecture/2.avif';

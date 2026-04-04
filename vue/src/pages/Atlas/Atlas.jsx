@@ -2,9 +2,9 @@ import React from 'react';
 import './Atlas.css';
 
 import hero from '../../assets/culture/atlas/1.png';
-import image1 from '../../assets/culture/atlas/sowa-rigpa/1.jpg';
+import image1 from '../../assets/culture/atlas/sowa-rigpa/1.avif';
 import image2 from '../../assets/culture/atlas/sowa-rigpa/2.avif';
-import image3 from '../../assets/culture/atlas/sowa-rigpa/3.jpg';
+import image3 from '../../assets/culture/atlas/sowa-rigpa/3.avif';
 import image4 from '../../assets/culture/atlas/artisanat/1.avif';
 import image5 from '../../assets/culture/atlas/artisanat/2.avif';
 import image6 from '../../assets/culture/atlas/langage/1.webp';
