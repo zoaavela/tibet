@@ -75,9 +75,9 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <HashRouter>
+      <BrowserRouter>
         <AppContent />
-      </HashRouter>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
