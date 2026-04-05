@@ -8,7 +8,7 @@ import image5 from '../../assets/culture/society/drogpa/1.avif';
 import image6 from '../../assets/culture/society/gastronomie/1.jpg';
 import image7 from '../../assets/culture/society/gastronomie/2.jpg';
 import image8 from '../../assets/culture/society/climat/1.jpg';
-import image9 from '../../assets/culture/society/1.jpg';
+import image9 from '../../assets/culture/society/1.avif';
 
 const faunaAnimals = [
     {

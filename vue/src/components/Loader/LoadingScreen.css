@@ -1,0 +1,69 @@
+/* LoadingScreen.css */
+.loading-screen-full {
+  position: fixed;
+  inset: 0;
+  background-color: #000; /* Fond noir profond comme demandé */
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-out, visibility 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.loading-screen-full.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.knot-wrapper {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  /* Rotation de 90° pour l'effet "allongé" horizontal comme demandé */
+  transform: rotate(90deg);
+  color: var(--accent, #A68966);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.knot-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* La base : le tracé vide ou très sombre */
+.knot-base {
+  opacity: 0.1;
+}
+
+/* Le remplissage : s'affiche au fur et à mesure */
+.knot-fill {
+  /* On utilise le clip-path pour remplir "petit à petit" sur 1s */
+  clip-path: inset(100% 0 0 0); /* Cache tout */
+  animation: fillingKnot 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fillingKnot {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* Optionnel : Une légère lueur dorée quand c'est plein */
+.knot-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--accent, #A68966);
+  filter: blur(40px);
+  opacity: 0;
+  animation: finalGlow 0.5s ease-out 0.8s forwards;
+}
+
+@keyframes finalGlow {
+  to { opacity: 0.15; }
+}

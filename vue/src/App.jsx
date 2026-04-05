@@ -16,6 +16,8 @@ import Atlas from "./pages/Atlas/Atlas";
 import Society from "./pages/Society/Society";
 import "./index.css";
 
+import LoadingScreen from "./components/Loader/LoadingScreen";
+
 function AppContent() {
   const location = useLocation();
   const showNavbar = location.pathname !== "/";
@@ -49,6 +51,7 @@ function AppContent() {
 
   return (
     <>
+      <LoadingScreen />
       {showNavbar && <Navbar />}
 
       {/* Wrapper pour les transitions douces */}

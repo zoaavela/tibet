@@ -1,4 +1,4 @@
-// Home.jsx
+import { useEffect } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
@@ -7,6 +7,15 @@ import image2 from '../../assets/home/3.png';
 import image3 from '../../assets/home/4.avif';
 
 export default function Home() {
+    // Préchargement des images critiques pour une transition fluide sans "pop-in"
+    useEffect(() => {
+        const assets = [image1, image2, image3];
+        assets.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }, []);
+
     return (
         <div className="home-wrapper">
 
