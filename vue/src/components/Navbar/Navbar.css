@@ -94,8 +94,8 @@
 }
 
 .mh-link:hover {
-    color: var(--text-primary, #E3E0D8);
-    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-primary);
+    background: var(--overlay);
 }
 
 .mh-link:hover::after,
@@ -136,8 +136,8 @@
 }
 
 .mh-btn:hover {
-    color: var(--text-primary, #E3E0D8);
-    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-primary);
+    background: var(--overlay);
 }
 
 .mh-btn:first-child {
@@ -228,7 +228,7 @@
 }
 
 .mh-mega-item:hover {
-    background: rgba(255, 255, 255, 0.025);
+    background: var(--overlay);
 }
 
 .mh-mega-item::before {
@@ -272,11 +272,4 @@
     text-transform: uppercase;
 }
 
-/* ── Light mode overrides ── */
-[data-theme="light"] .mh-root {
-    --bg-primary: #F9F7F2;
-    --text-primary: #1A1A1A;
-    --text-dim: #888;
-    --accent: #8E2922;
-    --border: rgba(0, 0, 0, 0.1);
-}
+/* Theme transitions are handled globally in Theme.css */

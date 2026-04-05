@@ -106,7 +106,7 @@ export default function Exploration() {
 
                 <div className={`drag-hint ${showHint ? "visible" : "hidden"}`}>
                     <div className="drag-icon">↔</div>
-                    <span>Glisez pour explorer</span>
+                    <span>Glissez pour explorer</span>
                 </div>
 
                 <Canvas className="canvas-3d" camera={{ position: [0, 1.2, 4.5], fov: 40 }}>
@@ -128,8 +128,8 @@ export default function Exploration() {
                 </Canvas>
 
                 <div className="explore-scroll-indicator">
-                    <span className="scroll-line"></span>
                     <span>Documentation</span>
+                    <span className="scroll-line"></span>
                 </div>
             </section>
 
@@ -151,7 +151,7 @@ export default function Exploration() {
                                 Ce paradoxe est au cœur de ce que l'historien de l'art Rob Linrothe appelle la "compassion impitoyable". Le Phurba n'est pas conçu pour blesser les êtres vivants, mais pour "assassiner" l'ego. Ses trois lames transpercent métaphoriquement les "Trois Poisons" mentaux : l'ignorance, l'attachement et la haine. Il ne tue pas l'ennemi extérieur, mais "cloue" les démons intérieurs qui tourmentent l'esprit.
                             </p>
                             <p>
-                                En anthropologie, il agit comme un <em>Axis Mundi</em> (poteau cosmique) : planté dans le sol, il stabilise le chaos environnant. Psychologiquement, comme le soulignent les approches jungiennes, il permet au pratiquant de faire face à sa propre "Ombre" au lieu de la fuir.
+                                En anthropologie, il agit comme un <em>Axis Mundi</em> : planté dans le sol, il stabilise le chaos environnant. Psychologiquement, comme le soulignent les approches jungiennes, il permet au pratiquant de faire face à sa propre "Ombre" au lieu de la fuir.
                             </p>
                         </div>
                     </div>

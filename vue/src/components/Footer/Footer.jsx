@@ -83,7 +83,6 @@ export default function Footer() {
                 <p>© {new Date().getFullYear()} — Mission d'Étude Tibet. Tous droits réservés.</p>
                 <div className="footer-legal">
                     <span>Expérience Immersive</span>
-                    <span>v.2.0</span>
                 </div>
             </div>
         </footer>

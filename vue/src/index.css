@@ -24,6 +24,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Prevent element dragging site-wide */
+  -webkit-user-drag: none !important;
 }
 
 body {
@@ -41,6 +43,8 @@ video {
   height: 100%;
   object-fit: cover;
   display: block;
+  /* Extra layer for images */
+  pointer-events: none;
 }
 
 /* Scrollbar invisible pour un look plus clean */

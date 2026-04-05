@@ -40,15 +40,15 @@
 }
 
 .col-atlas .menu-col-bg {
-    background-image: url('../../assets/1.jpg');
+    background-image: url('../../assets/culture/1.jpg');
 }
 
 .col-society .menu-col-bg {
-    background-image: url('../../assets/2.jpg');
+    background-image: url('../../assets/culture/2.avif');
 }
 
 .col-chronicles .menu-col-bg {
-    background-image: url('../../assets/3.jpg');
+    background-image: url('../../assets/culture/3.avif');
 }
 
 .menu-column:hover {

@@ -5,7 +5,10 @@
     min-height: 100vh;
     background-color: var(--bg-primary);
     padding-bottom: 10vh;
+    position: relative;
+    overflow-x: hidden;
 }
+
 
 /* --- MUSEUM LABEL (Réutilisé) --- */
 .glossary-page-container .museum-label {
@@ -15,8 +18,12 @@
 /* --- GLOSSARY SECTION --- */
 .glossary-section {
     padding: 2vh 7vw 8vh;
-    max-width: 1400px;
+    max-width: 1200px;
+    /* Reduced max-width to allow more space for the pattern on very wide screens */
+    position: relative;
+    z-index: 2;
 }
+
 
 .glossary-grid {
     display: grid;
@@ -81,8 +88,44 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* --- SIDE PATTERN (Thangka) --- */
+.glossary-side-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35vw;
+    /* Fills a good portion of the right side */
+    height: 100%;
+    background-image: url('../../assets/archives/glossaire/1.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: linear-gradient(to right, transparent, black 40%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 40%);
+}
+
+[data-theme="light"] .glossary-side-pattern {
+    opacity: 0.08;
+    filter: brightness(1.2) contrast(0.8);
+}
+
 /* Responsive */
+@media (max-width: 1200px) {
+    .glossary-side-pattern {
+        width: 20vw;
+        opacity: 0.05;
+    }
+}
+
 @media (max-width: 900px) {
+    .glossary-side-pattern {
+        display: none;
+        /* Hide on small tablets and phones as per user request */
+    }
+
     .glossary-grid {
         grid-template-columns: 1fr;
         gap: 4rem;

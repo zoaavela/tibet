@@ -26,9 +26,9 @@ const MEGA_CONTENT = {
     title: "Culture",
     text: "Immergez-vous dans les Savoirs, le Vivant et les Récits du Tibet.",
     items: [
-      { num: "01", name: "L'Atlas", sub: "Savoirs & Artisanat", path: "/atlas" },
-      { num: "02", name: "Society", sub: "Peuple & Nature", path: "/society" },
-      { num: "03", name: "Chronicles", sub: "Histoire & Récit", path: "/chronicles" },
+      { num: "01", name: "Atlas", sub: "Savoirs & Artisanat", path: "/atlas" },
+      { num: "02", name: "Société", sub: "Peuple & Nature", path: "/society" },
+      { num: "03", name: "Chroniques", sub: "Histoire & Récit", path: "/chronicles" },
     ],
   },
   archives: {
@@ -142,7 +142,7 @@ export default function Navbar({ currentPage = "home", onNavigate }) {
         <div className="mh-bar">
 
           {/* Logo */}
-          <button className="mh-logo" onClick={() => { 
+          <button className="mh-logo" onClick={() => {
             const targetPath = "/home";
             if (window.location.pathname === targetPath) {
               const snapContainer = document.querySelector('.explore-page-snap-container, .home-wrapper');
@@ -152,8 +152,8 @@ export default function Navbar({ currentPage = "home", onNavigate }) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }
-            setOpenMega(null); 
-            navigate(targetPath); 
+            setOpenMega(null);
+            navigate(targetPath);
           }}>
             <KnotMark />
             Immersion au Tibet

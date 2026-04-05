@@ -11,6 +11,23 @@
   --theme-transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out, border-color 0.8s ease-in-out;
 }
 
+/* --- SCROLLBAR THEMING --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 2px solid var(--bg-primary);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+
 /* Base Theme (Dark par défaut) */
 body, [data-theme="dark"] {
   --bg-primary: #080808;
@@ -19,7 +36,19 @@ body, [data-theme="dark"] {
   --text-dim: #999999;
   --accent: #A68966;
   --border: rgba(255, 255, 255, 0.1);
+  --overlay: rgba(0, 0, 0, 0.4);
 }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--theme-transition);
+}
+
+main {
+  transition: var(--theme-transition);
+}
+
 
 /* Light Theme */
 [data-theme="light"] {
@@ -29,7 +58,9 @@ body, [data-theme="dark"] {
   --text-dim: #666666;
   --accent: #8E2922;
   --border: rgba(0, 0, 0, 0.1);
+  --overlay: rgba(255, 255, 255, 0.4);
 }
+
 
 /* --- MUSEUM LABEL CARTRIDGE --- */
 .museum-label {

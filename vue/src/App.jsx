@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Globe from "./components/Globe/Globe";
 import Home from "./pages/Home/Home";
@@ -65,6 +65,8 @@ function AppContent() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/atlas" element={<Atlas />} />
           <Route path="/society" element={<Society />} />
+          {/* Catch-all route to redirect back home if the URL is invalid */}
+          <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
       </main>
 

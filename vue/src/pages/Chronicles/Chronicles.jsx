@@ -1,7 +1,7 @@
 import React from 'react';
 import './Chronicles.css';
 
-import hero from '../../assets/culture/chronicles/1.jpg';
+import hero from '../../assets/culture/chronicles/1.webp';
 import image1 from '../../assets/culture/chronicles/empire/1.avif';
 import image2 from '../../assets/culture/chronicles/empire/2.png';
 import image3 from '../../assets/culture/chronicles/gesar/1.avif';
@@ -28,10 +28,6 @@ const Chronicles = () => {
                         loading="eager"
                         decoding="async"
                     />
-                </div>
-                <div className="chr-hero-scroll-indicator">
-                    <span>Dérouler le fil</span>
-                    <div className="scroll-line"></div>
                 </div>
             </header>
 

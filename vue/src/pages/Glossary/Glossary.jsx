@@ -86,6 +86,9 @@ export default function Glossary() {
                     ))}
                 </div>
             </section>
+
+            {/* Side Pattern for large screens */}
+            <div className="glossary-side-pattern"></div>
         </div>
     );
 }

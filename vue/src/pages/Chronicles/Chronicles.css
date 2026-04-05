@@ -72,7 +72,7 @@
     font-weight: 300;
     margin-bottom: 2rem;
     font-style: italic;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .chr-hero-subtitle {
@@ -80,7 +80,7 @@
     margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-dim);
 }
 
 
@@ -263,7 +263,7 @@
     font-style: italic;
     padding-left: 2rem;
     border-left: 2px solid var(--chapter-color);
-    color: #fff;
+    color: var(--text-primary);
     margin: 3rem 0;
     line-height: 1.6;
 }

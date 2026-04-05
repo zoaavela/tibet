@@ -1,78 +1,88 @@
 // Gallery.jsx
 import React from "react";
 import "./Gallery.css";
+import image1 from "../../assets/archives/galerie/1.jpg";
+import image2 from "../../assets/archives/galerie/2.jpg";
+import image3 from "../../assets/archives/galerie/3.jpg";
+import image4 from "../../assets/archives/galerie/4.jpg";
+import image5 from "../../assets/archives/galerie/5.jpg";
+import image6 from "../../assets/archives/galerie/6.jpg";
+import image7 from "../../assets/archives/galerie/7.jpg";
+import image8 from "../../assets/archives/galerie/8.jpg";
+import image9 from "../../assets/archives/galerie/9.jpg";
+import image10 from "../../assets/archives/galerie/10.jpg";
 
 export default function Gallery() {
     const galleryItems = [
         {
             id: 1,
-            title: "Phurba Météorique",
-            meta: "Fer et laiton • XVIIe siècle",
-            desc: "Dague rituelle à trois faces utilisée pour clouer les forces démoniaques de l'ego. La lame ne tranche pas la chair, elle immobilise l'illusion.",
-            img: "https://images.unsplash.com/photo-1622322306307-2a54ce05a1e2?q=80&w=800"
+            title: "Moulins à Prières en Mouvement",
+            meta: "Photographie",
+            desc: "Alignement de moulins à prières traditionnels en action. Leur rotation rapide libère les mantras inscrits vers les cieux, diffusant la compassion et la sagesse dans le vent.",
+            img: image1
         },
         {
             id: 2,
-            title: "Masque de Mahakala",
-            meta: "Bois sculpté, pigments • Région du Kham",
-            desc: "Protecteur courroucé du Dharma. Ses trois yeux perçoivent le passé, le présent et le futur. Sa fureur est une manifestation de compassion extrême.",
-            img: "https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?q=80&w=800"
+            title: "La Voûte Sacrée",
+            meta: "Photographie",
+            desc: "L'intérieur d'un temple tibétain révélant une architecture complexe et des ornements foisonnants. Des statues dorées et des peintures rituelles cartographient le cosmos bouddhiste et le chemin vers l'éveil.",
+            img: image2
         },
         {
             id: 3,
-            title: "Thangka Sanglant",
-            meta: "Soie, cinabre, or • XIXe siècle",
-            desc: "Peinture géométrique représentant l'architecture d'un mandala. Le rouge profond est obtenu à partir de minerai de cinabre broyé.",
-            img: "https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?q=80&w=800"
+            title: "Thangka Mandala Courroucé",
+            meta: "Peinture / Thangka",
+            desc: "Une peinture de Thangka complexe dépeignant un mandala dynamique de déités protectrices. La géométrie et les couleurs vives symbolisent la transmutation des passions en sagesse et la protection du Dharma.",
+            img: image3
         },
         {
             id: 4,
-            title: "Kapala",
-            meta: "Os humain, argent repoussé • Origine inconnue",
-            desc: "Coupe crânienne rituelle. Utilisée dans les pratiques tantriques pour symboliser la destruction de la pensée dualiste et l'offrande de soi.",
-            img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=800"
+            title: "L'Ascension Silencieuse",
+            meta: "Photographie",
+            desc: "Un moine en robe ocre rouge gravit les marches de pierre séculaires. Le contraste puissant entre les couleurs et la chaux d'un blanc éclatant définit l'architecture et la dévotion monastique.",
+            img: image4
         },
         {
             id: 5,
-            title: "Kangling",
-            meta: "Fémur, cuivre • Haut plateau",
-            desc: "Trompe rituelle. Son hurlement guttural lors des danses Cham est censé terrifier les esprits malveillants et rappeler l'impermanence de la chair.",
-            img: "https://images.unsplash.com/photo-1628155255474-05d9c6692b6a?q=80&w=800"
+            title: "L'Épopée Nomade",
+            meta: "Peinture ancienne / Fresque",
+            desc: "Détail d'une peinture ancienne illustrant une caravane de cavaliers tibétains. L'œuvre, accompagnée de calligraphies, narre l'histoire épique, la culture martiale et les traditions équestres des peuples du toit du monde.",
+            img: image5
         },
         {
             id: 6,
-            title: "Temple de l'Ombre",
-            meta: "Pierre, chaux, suie • Monastère de Sakya",
-            desc: "L'architecture même devient un outil de terreur sacrée. Les murs sombres et les couloirs étroits préparent l'esprit à l'annihilation de l'ego.",
-            img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800"
+            title: "Géométrie de l'Ombre",
+            meta: "Photographie",
+            desc: "Un homme descend les marches d'un édifice imposant. Les hauts murs rouges, ponctués de fenêtres géométriques, créent une composition visuelle minimaliste et vertigineuse, préparant l'esprit à l'annihilation de lego.",
+            img: image6
         },
         {
             id: 7,
-            title: "Damaru",
-            meta: "Crânes, cuir, soie • XVIIIe siècle",
-            desc: "Tambourin en forme de sablier. Son claquement sec invoque les divinités courroucées et marque le rythme implacable de l'impermanence.",
-            img: "https://images.unsplash.com/photo-1517414609830-1af8d8a5eb6c?q=80&w=800"
+            title: "L'Océan Rouge de Larung Gar",
+            meta: "Photographie",
+            desc: "Vue spectaculaire sur l'institut de Larung Gar. Des milliers de petites habitations en bois rouge s'entassent organiquement à flanc de montagne, cœur battant de l'étude et de la pratique du bouddhisme tibétain.",
+            img: image7
         },
         {
             id: 8,
-            title: "Dorje (Vajra)",
-            meta: "Bronze sombre • Région de Tsang",
-            desc: "Le foudre-diamant. Indestructible et fulgurant, il représente la nature ultime de l'esprit, coupant à travers l'ignorance avec la précision de l'éclair.",
-            img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800"
+            title: "La Bibliothèque du Dharma",
+            meta: "Photographie",
+            desc: "Des centaines de textes sacrés (pechas) sont empilés dans les rayonnages d'une bibliothèque monastique séculaire. Chaque feuillet, préservé entre bois et tissu, garde la sagesse et les enseignements du Dharma.",
+            img: image8
         },
         {
             id: 9,
-            title: "Parchemin Mantrique",
-            meta: "Encre, cinabre, papier lokta • Trésor Terma",
-            desc: "Syllabes germes (Bija) tracées au sang et au cinabre. La calligraphie n'est pas lue, elle est ressentie comme une présence physique et vibratoire.",
-            img: "https://images.unsplash.com/photo-1564491775798-293e50669b93?q=80&w=800"
+            title: "Le Chemin des Lumières",
+            meta: "Photographie",
+            desc: "Une fidèle progresse à travers un océan de lampes à beurre, avec un grand temple doré s'élevant en arrière-plan. La convergence des lumières et de l'architecture cartographie le cosmos bouddhiste et le chemin vers l'éveil.",
+            img: image9
         },
         {
             id: 10,
-            title: "Couronne Munda",
-            meta: "Os, turquoise ternie • Monastère de Drepung",
-            desc: "Diadème aux cinq crânes secs, porté par les Dharmapalas. Ils symbolisent la transmutation des cinq poisons de l'esprit en cinq sagesses transcendantes.",
-            img: "https://images.unsplash.com/photo-1543818318-7b5f5dd007a6?q=80&w=800"
+            title: "La Jeune Gardienne du Toit du Monde",
+            meta: "Photographie",
+            desc: "Portrait d'une jeune fille tibétaine parée de bijoux traditionnels en turquoise et corail. Son regard intense et fier incarne la résilience, la culture et l'identité des peuples de haute altitude.",
+            img: image10
         }
     ];
 

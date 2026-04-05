@@ -7,8 +7,8 @@ import image4 from '../../assets/culture/society/animals/4.avif';
 import image5 from '../../assets/culture/society/drogpa/1.avif';
 import image6 from '../../assets/culture/society/gastronomie/1.jpg';
 import image7 from '../../assets/culture/society/gastronomie/2.jpg';
-import image8 from '../../assets/culture/society/climat/1.avif';
-import image9 from '../../assets/culture/society/1.png';
+import image8 from '../../assets/culture/society/climat/1.jpg';
+import image9 from '../../assets/culture/society/1.jpg';
 
 const faunaAnimals = [
     {
@@ -61,10 +61,6 @@ const Society = () => {
                         loading="eager"
                         decoding="async"
                     />
-                </div>
-                <div className="soc-hero-scroll-indicator">
-                    <span>Dérouler le fil</span>
-                    <div className="scroll-line"></div>
                 </div>
             </header>
 
