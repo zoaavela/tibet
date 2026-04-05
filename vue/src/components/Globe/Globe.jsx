@@ -4,6 +4,7 @@ import Globe from "react-globe.gl";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import "./Globe.css";
+import tibetGeo from "./tibet.json";
 
 const ZOOM_DURATION = 2400;
 const TARGET_ALTITUDE = 0.5;
@@ -11,15 +12,8 @@ const ROTATION_SPEED = 0.4;
 const DRAG_THRESHOLD = 6;
 const CLICK_MAX_DURATION = 300;
 
-const pointsData = [
-  {
-    lat: 29.6525,
-    lng: 91.1721,
-    size: 1.5,
-    color: "#e3e0d8",
-    label: "LHASSA",
-  },
-];
+const TIBET_MARKER = { lat: 25.5, lng: 91.1, label: "TIBET" };
+const TIBET_POLYGONS = tibetGeo.features;
 
 export default function CustomGlobe() {
   const globeRef = useRef();
@@ -100,84 +94,117 @@ export default function CustomGlobe() {
     };
   }, []);
 
+  const [introFinished, setIntroFinished] = useState(false);
+
   useEffect(() => {
     if (!ready || !containerRef.current) return;
 
     const tl = gsap.timeline();
-    tl.to(containerRef.current, { opacity: 1, duration: 2, ease: "power2.inOut" })
-      .fromTo(".ui-top", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }, "-=1")
-      .fromTo(".ui-bottom", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, "-=0.5");
+    // Intro cinematic sequence
+    tl.to(".intro-overlay", { opacity: 1, duration: 2, ease: "power2.inOut" })
+      .to(".intro-text h1", { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }, "-=0.5")
+      .to(".intro-text p", { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, "-=1")
+      .to(".intro-overlay", { 
+        opacity: 0, 
+        duration: 2, 
+        delay: 2, 
+        ease: "power2.inOut",
+        onComplete: () => setIntroFinished(true)
+      })
+      .to(containerRef.current, { opacity: 1, duration: 2, ease: "power2.inOut" }, "-=1")
+      .fromTo(".ui-bottom", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }, "-=0.5");
   }, [ready]);
 
-  const handlePointClick = (point) => {
-    if (pointerMoved.current) return;
-    if (Date.now() - pointerStart.current.time > CLICK_MAX_DURATION) return;
-    if (transitioning.current) return;
-
+  const handleGlobeClick = () => {
+    if (!introFinished || transitioning.current) return;
+    
+    // Zoom direct vers le centre
     transitioning.current = true;
     const globe = globeRef.current;
+    if (!globe) return;
     const controls = globe.controls();
     controls.autoRotate = false;
     if (resetTimer.current) clearTimeout(resetTimer.current);
 
-    globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: TARGET_ALTITUDE }, ZOOM_DURATION);
+    globe.pointOfView({ lat: TIBET_MARKER.lat, lng: TIBET_MARKER.lng, altitude: TARGET_ALTITUDE }, ZOOM_DURATION);
 
     setTimeout(() => {
       gsap.to(containerRef.current, {
         opacity: 0,
-        duration: 1.2,
-        ease: "power2.inOut",
+        duration: 2,
+        ease: "power4.inOut",
         onComplete: () => navigate("/home"),
       });
-    }, ZOOM_DURATION * 0.6);
+    }, ZOOM_DURATION * 0.4);
   };
 
   return (
-    <div ref={containerRef} className="globe-fullscreen" style={{ opacity: 0 }}>
+    <div className="globe-master-container">
+      {/* Introduction Cinématique Overlay */}
+      {!introFinished && (
+        <div className="intro-overlay">
+          <div className="intro-text">
+            <h1 style={{ opacity: 0, transform: 'translateY(20px)' }}>Patrimoine du Tibet</h1>
+            <p style={{ opacity: 0, transform: 'translateY(20px)' }}>Une immersion au cœur du toit du monde.</p>
+          </div>
+        </div>
+      )}
 
-      {/* UI parfaitement centrée */}
-      <div className="globe-ui-container">
-        <div className="ui-top">
-          <span className="subtitle">Héritage Vajrayāna</span>
-          <h1>Phurba</h1>
+      <div ref={containerRef} className="globe-fullscreen" style={{ opacity: 0 }}>
+        <div className="globe-ui-container">
+          <div className="ui-bottom">
+            <span>Cliquez pour explorer</span>
+          </div>
         </div>
 
-        <div className="ui-bottom">
-          <div className={`hint-dot ${hovered ? "active" : ""}`}></div>
-          <span>Entrer</span>
-        </div>
+        <Globe
+          ref={globeRef}
+          width={dimensions.width}
+          height={dimensions.height}
+          
+          /* Texture minimaliste sombre */
+          globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
+          backgroundColor="rgba(0,0,0,0)"
+          backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+          
+          /* DA du site : Blanc & Or */
+          showAtmosphere={true}
+          atmosphereColor="#A68966"
+          atmosphereAltitude={0.25}
+          
+          /* Zone Tibet détaillée (GeoJSON) */
+          polygonsData={TIBET_POLYGONS}
+          polygonAltitude={0.001} /* Pratiquement plat sur le globe */
+          polygonCapColor={() => hovered ? "rgba(166, 137, 102, 0.5)" : "rgba(166, 137, 102, 0.2)"}
+          polygonSideColor={() => "rgba(166, 137, 102, 0.05)"}
+          polygonStrokeColor={() => "#A68966"}
+          polygonLabel={() => ""}
+          onPolygonClick={handleGlobeClick} /* On utilise la même logique d'entrée */
+          onPolygonHover={(poly) => {
+            setHovered(!!poly);
+            if (containerRef.current) containerRef.current.style.cursor = poly ? "pointer" : "grab";
+          }}
+          
+          /* "Le Piquet" - Marqueur Tibet */
+          htmlElementsData={[TIBET_MARKER]}
+          htmlLat="lat"
+          htmlLng="lng"
+          htmlElement={() => {
+            const el = document.createElement("div");
+            el.className = "tibet-piquet";
+            el.innerHTML = `
+              <div class="piquet-label">TIBET</div>
+            `;
+            return el;
+          }}
+
+          /* Interactions Globe Globale */
+          onGlobeClick={handleGlobeClick}
+          onGlobeHover={(obj) => {
+            if (containerRef.current) containerRef.current.style.cursor = introFinished ? "pointer" : "default";
+          }}
+        />
       </div>
-
-      <Globe
-        ref={globeRef}
-        width={dimensions.width}
-        height={dimensions.height}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
-        backgroundColor="rgba(0,0,0,0)"
-        atmosphereColor="#ffffff"
-        atmosphereAltitude={0.15}
-        pointsData={pointsData}
-        pointLat="lat"
-        pointLng="lng"
-        pointAltitude={0.01}
-        pointRadius={(d) => (hovered ? d.size * 1.2 : d.size)}
-        pointColor="color"
-        pointResolution={32}
-        onPointClick={handlePointClick}
-        onPointHover={(pt) => {
-          setHovered(!!pt);
-          if (containerRef.current) containerRef.current.style.cursor = pt ? "pointer" : "grab";
-        }}
-        htmlElementsData={pointsData}
-        htmlLat="lat"
-        htmlLng="lng"
-        htmlElement={(d) => {
-          const el = document.createElement("div");
-          el.className = "marker-simple";
-          el.innerHTML = d.label;
-          return el;
-        }}
-      />
     </div>
   );
 }

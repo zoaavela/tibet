@@ -59,10 +59,6 @@ const Atlas = () => {
                         decoding="async"
                     />
                 </div>
-                <div className="soc-hero-scroll-indicator">
-                    <span>Explorer l'Atlas</span>
-                    <div className="scroll-line"></div>
-                </div>
             </header>
 
             {/* ================= SECTION 1 : SOWA RIGPA ================= */}
