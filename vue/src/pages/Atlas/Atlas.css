@@ -472,7 +472,7 @@
 
 .carousel-track {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
     width: 100%;
     padding-bottom: 1rem;
@@ -584,7 +584,7 @@
 /* ================= RESPONSIVE ================= */
 
 /* Fauna section responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .carousel-track {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.75rem;

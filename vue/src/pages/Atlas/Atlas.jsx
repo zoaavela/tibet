@@ -6,35 +6,48 @@ import image1 from '../../assets/culture/atlas/sowa-rigpa/1.avif';
 import image4 from '../../assets/culture/atlas/artisanat/1.avif';
 import image5 from '../../assets/culture/atlas/artisanat/2.avif';
 import image6 from '../../assets/culture/atlas/langage/1.webp';
+import image7 from '../../assets/culture/atlas/langage/2.avif';
+import image8 from '../../assets/culture/atlas/langage/3.jpg';
+import image9 from '../../assets/culture/atlas/langage/4.jpg';
+import image10 from '../../assets/culture/atlas/langage/5.jpg';
+import image11 from '../../assets/culture/atlas/langage/6.webp';
+
 
 const colorCodes = [
     {
         id: 1,
         commonName: 'Bleu',
         scientificName: 'ESPACE',
-        image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800', // Placeholder or use another image
+        image: image8,
         description: 'La première toile du fil. Englobante, elle représente l\'atmosphère supérieure éternelle.',
     },
     {
         id: 2,
         commonName: 'Blanc',
         scientificName: 'AIR',
-        image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800',
+        image: image10,
         description: 'Mouvement des nuages, vecteur principal des prières emportées mécaniquement.',
     },
     {
         id: 3,
         commonName: 'Rouge',
         scientificName: 'FEU',
-        image: 'https://images.unsplash.com/photo-1528114039593-4366ee08227d?q=80&w=800',
+        image: image9,
         description: 'Température thermique et éveil intellectuel, central à la chaîne des Lungta.',
     },
     {
         id: 4,
         commonName: 'Jaune',
         scientificName: 'TERRE',
-        image: 'https://images.unsplash.com/photo-1541411438265-4bb4f85709f3?q=80&w=800',
+        image: image7,
         description: 'Ancrage jaune. La géologie solide finale protégeant la sédimentation du rite d\'altitude.',
+    },
+    {
+        id: 5,
+        commonName: 'Vert',
+        scientificName: 'EAU',
+        image: image11,
+        description: 'Vitalité fluide. Elle incarne le mouvement des rivières sacrées et la régénération du vivant.',
     }
 ];
 
@@ -213,7 +226,6 @@ const Atlas = () => {
                                         <div className="museum-caption-tag">{color.scientificName}</div>
                                     </figure>
                                     <div className="card-text-content">
-                                        <span className="scientific-meta">Élément</span>
                                         <h4>{color.commonName}</h4>
                                         <div className="card-separator"></div>
                                         <p>{color.description}</p>
