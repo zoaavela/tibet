@@ -47,7 +47,11 @@ export default function Footer() {
                         <span className="footer-label">Immersion</span>
                         <Link to="/exploration" className="footer-link">Exploration 3D</Link>
                         <Link to="/archives" className="footer-link">Fonds Archives</Link>
-                        <Link to="/accueil" className="footer-link">Accueil</Link>
+                        <Link to="/home" className="footer-link" onClick={(e) => {
+                            if (window.location.pathname === "/home") {
+                                scrollToTop();
+                            }
+                        }}>Accueil</Link>
                     </div>
  
                     {/* Savoirs */}

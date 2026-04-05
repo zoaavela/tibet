@@ -127,7 +127,7 @@ export default function CustomGlobe() {
         opacity: 0,
         duration: 1.2,
         ease: "power2.inOut",
-        onComplete: () => navigate("/accueil"),
+        onComplete: () => navigate("/home"),
       });
     }, ZOOM_DURATION * 0.6);
   };

@@ -21,8 +21,9 @@ function AppContent() {
   const showNavbar = location.pathname !== "/";
   /* On cache le footer global sur les pages immersives qui gèrent leur propre scroll-snap */
   const showFooter = location.pathname !== "/" &&
-    location.pathname !== "/accueil" &&
+    location.pathname !== "/home" &&
     location.pathname !== "/archives" &&
+    location.pathname !== "/menu" &&
     location.pathname !== "/exploration";
 
   // --- Scroll to top or to anchor on route change (Support pour Snap Containers) ---
@@ -54,7 +55,7 @@ function AppContent() {
       <main key={location.pathname} className="page-fade-in">
         <Routes location={location}>
           <Route path="/" element={<Globe />} />
-          <Route path="/accueil" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/exploration" element={<Exploration />} />
           <Route path="/galerie" element={<Gallery />} />
           <Route path="/glossaire" element={<Glossary />} />

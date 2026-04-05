@@ -109,7 +109,7 @@ export default function Navbar({ currentPage = "home", onNavigate }) {
   function handleMegaItemClick(path) {
     setOpenMega(null);
     const [targetPath, targetHash] = path.split("#");
-    
+
     // Si on est déjà sur la page cible, on force le scroll
     if (window.location.pathname === targetPath) {
       if (targetHash) {
@@ -142,7 +142,19 @@ export default function Navbar({ currentPage = "home", onNavigate }) {
         <div className="mh-bar">
 
           {/* Logo */}
-          <button className="mh-logo" onClick={() => { setOpenMega(null); navigate("/accueil"); }}>
+          <button className="mh-logo" onClick={() => { 
+            const targetPath = "/home";
+            if (window.location.pathname === targetPath) {
+              const snapContainer = document.querySelector('.explore-page-snap-container, .home-wrapper');
+              if (snapContainer) {
+                snapContainer.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }
+            setOpenMega(null); 
+            navigate(targetPath); 
+          }}>
             <KnotMark />
             Immersion au Tibet
           </button>
