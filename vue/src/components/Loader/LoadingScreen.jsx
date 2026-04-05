@@ -1,39 +1,85 @@
-/* LoadingScreen.jsx */
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./LoadingScreen.css";
+import imageHome2 from "../../assets/home/2.avif";
+import imageHome3 from "../../assets/home/3.png";
+import imageHome4 from "../../assets/home/4.avif";
 
-/**
- * Écran de chargement minimaliste pour les sections "Héritage" et "Chroniques".
- * Il utilise l'Endless Knot (Shrivatsa) avec un remplissage progressif sur 1s.
- */
+// Galerie
+import gal1 from "../../assets/archives/galerie/1.jpg";
+import gal2 from "../../assets/archives/galerie/2.jpg";
+import gal3 from "../../assets/archives/galerie/3.jpg";
+import gal4 from "../../assets/archives/galerie/4.jpg";
+import gal5 from "../../assets/archives/galerie/5.jpg";
+import gal6 from "../../assets/archives/galerie/6.jpg";
+import gal7 from "../../assets/archives/galerie/7.jpg";
+import gal8 from "../../assets/archives/galerie/8.jpg";
+import gal9 from "../../assets/archives/galerie/9.jpg";
+import gal10 from "../../assets/archives/galerie/10.jpg";
+
+// Sources
+import book1 from "../../assets/archives/books/1.avif";
+import book2 from "../../assets/archives/books/2.avif";
+import book3 from "../../assets/archives/books/3.avif";
+import book4 from "../../assets/archives/books/4.avif";
+import book5 from "../../assets/archives/books/5.avif";
+import book6 from "../../assets/archives/books/6.avif";
+import book7 from "../../assets/archives/books/7.avif";
+import book8 from "../../assets/archives/books/8.avif";
+
 export default function LoadingScreen() {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const [isFading, setIsFading] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   // Liste des pages lourdes identifiées par l'utilisateur
   const HEAVY_PAGES = ["/", "/home", "/exploration", "/chronicles", "/atlas", "/society", "/galerie", "/sources", "/glossaire"];
 
+  // Registre des images critiques par route pour garantir un affichage instantané
+  const ASSETS_BY_ROUTE = {
+    "/": [
+      "https://unpkg.com/three-globe/example/img/earth-dark.jpg",
+      "https://unpkg.com/three-globe/example/img/night-sky.png"
+    ],
+    "/home": [imageHome2, imageHome3, imageHome4],
+    "/galerie": [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10],
+    "/sources": [book1, book2, book3, book4, book5, book6, book7, book8]
+  };
+
   useEffect(() => {
-    // Si la page est identifiée comme lourde, on déclenche le loader de 1s
-    if (HEAVY_PAGES.includes(location.pathname)) {
-      setIsVisible(true);
-      setIsFading(false);
-
-      // On cache le loader après 1.5s (durée demandée)
-      const timer = setTimeout(() => {
-        setIsFading(true);
-        // On laisse le temps au fondu CSS de finir
-        const vanish = setTimeout(() => setIsVisible(false), 500);
-        return () => clearTimeout(vanish);
-      }, 1500);
-
-      return () => clearTimeout(timer);
-    } else {
-      // Pour les autres pages, on ne l'affiche pas (ou on le reset silencieusement)
+    const isHeavy = HEAVY_PAGES.includes(location.pathname);
+    if (!isHeavy && !isFirstLoad) {
       setIsVisible(false);
+      return;
     }
+
+    setIsVisible(true);
+    setIsFading(false);
+
+    // 1. On précharge les images de la route actuelle
+    const currentAssets = ASSETS_BY_ROUTE[location.pathname] || [];
+    const preloadPromises = currentAssets.map(src => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = resolve; // On ne bloque pas indéfiniment si une image échoue
+      });
+    });
+
+    // 2. On attend la durée minimale ET que les images soient prêtes
+    const minTime = isFirstLoad ? 2500 : 1500;
+    const timerPromise = new Promise(resolve => setTimeout(resolve, minTime));
+
+    Promise.all([...preloadPromises, timerPromise]).then(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setIsVisible(false);
+        setIsFirstLoad(false);
+      }, 500);
+    });
+
   }, [location.pathname]);
 
   if (!isVisible) return null;

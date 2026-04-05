@@ -1,7 +1,7 @@
 import React from 'react';
 import './Atlas.css';
 
-import hero from '../../assets/culture/atlas/1.jpeg';
+import hero from '../../assets/culture/atlas/1.jpg';
 import image1 from '../../assets/culture/atlas/sowa-rigpa/1.avif';
 import image4 from '../../assets/culture/atlas/artisanat/1.avif';
 import image5 from '../../assets/culture/atlas/artisanat/2.avif';
