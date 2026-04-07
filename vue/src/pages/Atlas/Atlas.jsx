@@ -20,6 +20,7 @@ const colorCodes = [
         scientificName: 'ESPACE',
         image: image8,
         description: 'La première toile du fil. Englobante, elle représente l\'atmosphère supérieure éternelle.',
+        credit: 'Archives Musée / Lhasa'
     },
     {
         id: 2,
@@ -27,6 +28,7 @@ const colorCodes = [
         scientificName: 'AIR',
         image: image10,
         description: 'Mouvement des nuages, vecteur principal des prières emportées mécaniquement.',
+        credit: 'Coll. Particulière'
     },
     {
         id: 3,
@@ -34,6 +36,7 @@ const colorCodes = [
         scientificName: 'FEU',
         image: image9,
         description: 'Température thermique et éveil intellectuel, central à la chaîne des Lungta.',
+        credit: 'Fonds Gonpo'
     },
     {
         id: 4,
@@ -41,6 +44,7 @@ const colorCodes = [
         scientificName: 'TERRE',
         image: image7,
         description: 'Ancrage jaune. La géologie solide finale protégeant la sédimentation du rite d\'altitude.',
+        credit: 'Tibet Museum / 1954'
     },
     {
         id: 5,
@@ -48,6 +52,7 @@ const colorCodes = [
         scientificName: 'EAU',
         image: image11,
         description: 'Vitalité fluide. Elle incarne le mouvement des rivières sacrées et la régénération du vivant.',
+        credit: 'Fonds National'
     }
 ];
 
@@ -90,6 +95,7 @@ const Atlas = () => {
                             loading="lazy"
                             decoding="async"
                         />
+                        <figcaption className="img-credit"><span>Source</span> Archives Sowa Rigpa / Lhasa</figcaption>
                     </figure>
 
                     <div className="feature-text-content">
@@ -154,6 +160,7 @@ const Atlas = () => {
                                 loading="lazy"
                                 decoding="async"
                             />
+                            <figcaption className="img-credit"><span>Credit</span> Fonds Gonpo / 1924</figcaption>
                         </figure>
                         <div className="split-content">
                             <h3>Maîtrise & Tradition</h3>
@@ -169,6 +176,7 @@ const Atlas = () => {
                                 loading="lazy"
                                 decoding="async"
                             />
+                            <figcaption className="img-credit"><span>Source</span> Collection Musée de l'Homme</figcaption>
                         </figure>
                         <div className="split-content">
                             <h3>L'Économie Lapidaire</h3>
@@ -187,13 +195,16 @@ const Atlas = () => {
                 </div>
 
                 <div className="dossier-intro">
-                    <img
-                        src={image6}
-                        alt="Calligraphie tibétaine"
-                        className="dossier-hero-img"
-                        loading="lazy"
-                        decoding="async"
-                    />
+                    <figure className="dossier-hero-figure">
+                        <img
+                            src={image6}
+                            alt="Calligraphie tibétaine"
+                            className="dossier-hero-img"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <figcaption className="img-credit"><span>Source</span> Manuscrit de l'Université de Namgyal</figcaption>
+                    </figure>
                     <div className="dossier-intro-text">
                         <h3>Une Langue Manufacturée</h3>
                         <p>L'alphabet syllabique fut techniquement compilé au VIIe siècle par ordonnance royale. Naviguant entre la rigueur angulaire des textes Uchen et la fluidité de la main Ume.</p>
@@ -224,6 +235,7 @@ const Atlas = () => {
                                     <figure className="card-image-holder">
                                         <img src={color.image} alt={color.commonName} loading="lazy" decoding="async" />
                                         <div className="museum-caption-tag">{color.scientificName}</div>
+                                        <figcaption className="img-credit"><span>Credit</span> {color.credit}</figcaption>
                                     </figure>
                                     <div className="card-text-content">
                                         <h4>{color.commonName}</h4>

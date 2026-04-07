@@ -54,6 +54,7 @@ const Chronicles = () => {
                             <figcaption>
                                 <p>Brisez l'illusion contemporaine d'un havre méditatif pacifiste : le Tibet antique fut d'abord l'un des empires les plus martiaux d'Asie du 7ème siècle.</p>
                                 <p>Armées redoutables, contrôle du bassin du Tarim et pillage furtif de la capitale sino-Tangs – le Yarlung était total.</p>
+                                <div className="img-credit"><span>Credit</span> British Museum / Archaeological Survey</div>
                             </figcaption>
                         </figure>
 
@@ -88,12 +89,15 @@ const Chronicles = () => {
                         </div>
 
                         <div className="narrative-split">
-                            <img
-                                src={image2}
-                                alt="Détails d'armes anciennes"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <figure className="split-image-wrapper">
+                                <img
+                                    src={image2}
+                                    alt="Détails d'armes anciennes"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <figcaption className="img-credit"><span>Source</span> Museum of Tibetan Culture / Beijing</figcaption>
+                            </figure>
                             <div className="split-text">
                                 <h3>Le Prix du Bouddhisme</h3>
                                 <p>La chute fut causée par l'émergence des monastères. Le clergé bouddhiste exigeait l'exonération des impôts martiaux, vidant peu à peu les coffres et la fureur militaire des armées laïques.</p>
@@ -122,6 +126,7 @@ const Chronicles = () => {
                             <figcaption>
                                 <p>Plus profond que l'Iliade, plus gigantesque que l'Odyssée. Avec des dizaines de millions de mots articulés à la volée, c'est un testament héroïque.</p>
                                 <p>Une encyclopédie des guerriers, ancrée dans la cosmologie, contant la vie du sauveur nomade descendu écraser les rois-démons.</p>
+                                <span className="img-credit"><span>Credit</span> Rubin Museum of Art / New York</span>
                             </figcaption>
                         </figure>
 
@@ -129,13 +134,16 @@ const Chronicles = () => {
                             <h3>Les Bardes Analphabètes</h3>
                             <p>Le mystère cognitif des <em>Babdrung</em> : ces passeurs de mythologie sont très souvent dépourvus d'éducation textuelle.</p>
                             <p>Leur récitation titanesque se fait au gré d'une transe. Ils ne mémorisent pas. Ils rapportent lire des "images ou projections" défilant dans leur rétine au rythme de l'histoire.</p>
-                            <img
-                                src={image4}
-                                alt="Barde en transe"
-                                className="inline-img"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <figure className="inline-img-figure">
+                                <img
+                                    src={image4}
+                                    alt="Barde en transe"
+                                    className="inline-img"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <figcaption className="img-credit"><span>Credit</span> Smithsonian Institute / 1982</figcaption>
+                            </figure>
                         </div>
 
                         <div className="resource-dossier">
@@ -183,6 +191,7 @@ const Chronicles = () => {
                             <figcaption className="dark-caption">
                                 <p>L'ingénierie sismique et thermique de l'architecture tibétaine.</p>
                                 <p>L'architecture n'est pas guidée par l'esthétique pure, mais par une stricte nécessité de survie géologique face aux séismes et vents extrêmes.</p>
+                                <span className="img-credit"><span>Credit</span> Tibet Heritage Fund / UNESCO</span>
                             </figcaption>
                         </figure>
 
@@ -190,13 +199,16 @@ const Chronicles = () => {
                             <h3>La Physique de la Forteresse</h3>
                             <p>Bâtir sur le plateau tibétain implique de composer avec des contraintes majeures : une forte activité sismique, des vents violents, une amplitude thermique extrême et la rareté du bois.</p>
                             <p>Le résultat est le <strong>Dzong</strong> (forteresse-monastère) et les habitations en pisé. Leur caractéristique la plus frappante est la géométrie trapézoïdale : des murs massifs à la base qui s'affinent vers le sommet.</p>
-                            <img
-                                src={image6}
-                                alt="Murs inclinés d'une forteresse"
-                                className="inline-img large"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <figure className="inline-img-figure">
+                                <img
+                                    src={image6}
+                                    alt="Murs inclinés d'une forteresse"
+                                    className="inline-img large"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <figcaption className="img-credit"><span>Source</span> Archive Bureau of Cultural Relics / Lhasa</figcaption>
+                            </figure>
                         </div>
 
                         <div className="resource-dossier">
@@ -224,12 +236,15 @@ const Chronicles = () => {
                         </div>
 
                         <div className="narrative-split reverse">
-                            <img
-                                src={image7}
-                                alt="Détail de toit en aga"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <figure className="split-image-wrapper">
+                                <img
+                                    src={image7}
+                                    alt="Détail de toit en aga"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <figcaption className="img-credit"><span>Credit</span> Traditional Arts & Crafts Association</figcaption>
+                            </figure>
                             <div className="split-text">
                                 <h3>L'Économie des Matériaux</h3>
                                 <p>À plus de 4 000 mètres d'altitude, les arbres sont inexistants. Le bois est un luxe exclusivement réservé à l'ossature interne et acheminé à dos de yak.</p>

@@ -15,49 +15,57 @@ const BOOKS = [
         author: "Robert Beer",
         title: "The Encyclopedia of Tibetan Symbols and Motifs",
         details: "Boston : Shambhala Publications, 1999.",
-        cover: image1
+        cover: image1,
+        credit: "Shambhala Pub."
     },
     {
         author: "Robert Beer",
         title: "The Handbook of Tibetan Buddhist Symbols",
         details: "Londres : Serindia Publications, 2003.",
-        cover: image2
+        cover: image2,
+        credit: "Serindia Pub."
     },
     {
         author: "A.-M. Blondeau & K. Buffetrille",
         title: "Le Tibet est-il chinois ?",
         details: "Paris : Albin Michel, 2002.",
-        cover: image3
+        cover: image3,
+        credit: "Albin Michel"
     },
     {
         author: "Philippe Cornu",
         title: "Dictionnaire encyclopédique du bouddhisme",
         details: "Paris : Le Seuil, 2006 (1ère éd. 2001).",
-        cover: image4
+        cover: image4,
+        credit: "Editions du Seuil"
     },
     {
         author: "Arnaud Desjardins",
         title: "Le Message des Tibétains : Le vrai visage du tantrisme",
         details: "Paris : La Table Ronde, 1981.",
-        cover: image5
+        cover: image5,
+        credit: "La Table Ronde"
     },
     {
         author: "Robert N. Linrothe",
         title: "Ruthless Compassion: Wrathful Deities",
         details: "Londres : Serindia Publications, 1999.",
-        cover: image6
+        cover: image6,
+        credit: "Serindia Pub."
     },
     {
         author: "Rob Preece",
         title: "The Psychology of Buddhist Tantra",
         details: "Ithaca : Snow Lion Publications, 2006.",
-        cover: image7
+        cover: image7,
+        credit: "Snow Lion Pub."
     },
     {
         author: "Rolf Alfred Stein",
         title: "La Civilisation tibétaine",
         details: "Paris : L'Asiathèque, 2011 (1ère éd. 1962).",
-        cover: image8
+        cover: image8,
+        credit: "L'Asiathèque"
     }
 ];
 
@@ -185,6 +193,7 @@ export default function Sources() {
                             <div className="book-card" key={index}>
                                 <div className="book-cover">
                                     <img src={book.cover} alt={`Couverture du livre ${book.title}`} loading="lazy" />
+                                    <span className="img-credit">© {book.credit}</span>
                                 </div>
                                 <div className="book-info">
                                     <span className="book-author">{book.author}</span>
@@ -212,6 +221,7 @@ export default function Sources() {
                         <div className="film-card">
                             <div className="film-thumb">
                                 <img src="https://api-cdn.arte.tv/img/v2/image/NLoPjL5ig5AQcwHMe3WeJH/1920x1080?type=TEXT&watermark=true" alt="Miniature du documentaire" />
+                                <span className="img-credit">Source: ARTE G.E.I.E</span>
                                 <div className="film-overlay">
                                     <span className="play-icon">▶</span>
                                     <span>Visionner le documentaire</span>

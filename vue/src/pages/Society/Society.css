@@ -471,8 +471,9 @@
 }
 
 .carousel-track {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
     width: 100%;
     padding-bottom: 1rem;
@@ -487,6 +488,8 @@
     flex-direction: column;
     transition: all 0.4s ease;
     height: 100%;
+    max-width: 300px;
+    flex: 1 1 280px;
 }
 
 .carousel-card:hover {
@@ -586,7 +589,6 @@
 /* Fauna section responsive */
 @media (max-width: 1024px) {
     .carousel-track {
-        grid-template-columns: repeat(3, 1fr);
         gap: 1.75rem;
     }
 
@@ -601,7 +603,6 @@
 
 @media (max-width: 900px) {
     .carousel-track {
-        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 
@@ -628,9 +629,7 @@
     }
 
     .carousel-track {
-        grid-template-columns: 1fr;
         gap: 1.25rem;
-        padding: 0;
     }
 
     .carousel-container {

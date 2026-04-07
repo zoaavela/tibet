@@ -63,6 +63,7 @@ export default function Home() {
                             loading="lazy"
                             decoding="async"
                         />
+                        <span className="img-credit"><span>Credit</span> Fonds Gonpo / Archives Musée</span>
                     </div>
                 </div>
             </section>
@@ -82,6 +83,7 @@ export default function Home() {
                             loading="lazy"
                             decoding="async"
                         />
+                        <span className="img-credit"><span>Source</span> Museum of Tibetan Culture / Beijing</span>
                     </div>
 
                     {/* 3. Bloc Texte : En dessous de l'image */}
@@ -113,6 +115,7 @@ export default function Home() {
                             loading="lazy"
                             decoding="async"
                         />
+                        <span className="img-credit"><span>Credit</span> British Library Archives</span>
                     </div>
                     <div className="content-box">
                         <span className="num">Fonds documentaire</span>

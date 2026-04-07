@@ -157,4 +157,22 @@
         font-size: 0.8rem;
         margin-bottom: 2rem;
     }
+
+    .archive-bg-credit {
+        display: none;
+    }
+}
+
+.archive-bg-credit {
+    position: absolute;
+    bottom: 2rem;
+    right: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.4);
+    writing-mode: vertical-rl;
+    z-index: 5;
+    pointer-events: none;
 }

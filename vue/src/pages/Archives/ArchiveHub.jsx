@@ -7,21 +7,24 @@ const ARCHIVES = [
         title: "Galerie",
         desc: "Une collection exhaustive d'images sourcées et contextualisées retraçant l'histoire du Toit du Monde.",
         path: "/galerie",
-        className: "col-galerie"
+        className: "col-galerie",
+        credit: "Archives Musée / Lhasa"
     },
     {
         id: "bibliographie",
         title: "Bibliographie",
         desc: "Les piliers académiques et littéraires ayant servi à l'élaboration de ce fonds documentaire immersif.",
         path: "/sources",
-        className: "col-bibliographie"
+        className: "col-bibliographie",
+        credit: "Fonds Gonpo / 1924"
     },
     {
         id: "glossaire",
         title: "Glossaire",
         desc: "Un répertoire encyclopédique des concepts métaphysiques et techniques de la civilisation tibétaine.",
         path: "/glossaire",
-        className: "col-glossaire"
+        className: "col-glossaire",
+        credit: "British Library Archives"
     }
 ];
 
@@ -38,6 +41,7 @@ export default function ArchiveHub() {
                             Explorer
                         </Link>
                     </div>
+                    <div className="archive-bg-credit">{item.credit}</div>
                 </div>
             ))}
         </div>

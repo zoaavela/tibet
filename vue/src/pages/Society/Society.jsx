@@ -17,6 +17,7 @@ const faunaAnimals = [
         scientificName: 'Panthera Uncia',
         image: image1,
         description: 'Ses larges cavités nasales réchauffent l\'air glacial avant qu\'il n\'atteigne ses poumons. Sa queue d\'un mètre lui sert de balancier sur les falaises et de couverture thermique isolante.',
+        credit: 'WWF / Archives P. Uncia'
     },
     {
         id: 2,
@@ -24,6 +25,7 @@ const faunaAnimals = [
         scientificName: 'Pantholops Hodgsonii',
         image: image2,
         description: 'Capable de courir à 80 km/h à plus de 5 000 mètres. Elle possède un sous-poil extrêmement dense (shahtoosh) pour survivre au gel, ce qui en fait une espèce vulnérable au braconnage.',
+        credit: 'National Geographic / Coll. H.'
     },
     {
         id: 3,
@@ -31,6 +33,7 @@ const faunaAnimals = [
         scientificName: 'Grus Nigricollis',
         image: image3,
         description: 'La seule espèce de grue évoluant et se reproduisant en très haute altitude. Ses migrations saisonnières sont un indicateur biologique majeur pour les populations agro-pastorales.',
+        credit: 'Wildlife Conservation Tibet'
     },
     {
         id: 4,
@@ -38,6 +41,7 @@ const faunaAnimals = [
         scientificName: 'Bos Mutus',
         image: image4,
         description: 'Emblème du plateau tibétain, le yak sauvage peut peser jusqu\'à 1 200 kg. Ses poumons surdéveloppés et son sang riche en hémoglobine lui permettent de survivre à des altitudes dépassant 5 000 mètres.',
+        credit: 'Fonds Gonpo / 1924'
     }
 ];
 
@@ -80,6 +84,7 @@ const Society = () => {
                             loading="lazy"
                             decoding="async"
                         />
+                        <figcaption className="img-credit"><span>Credit</span> Fonds Gonpo (Drogpa / 1924)</figcaption>
                     </figure>
 
                     <div className="feature-text-content">
@@ -144,6 +149,7 @@ const Society = () => {
                                 loading="lazy"
                                 decoding="async"
                             />
+                            <figcaption className="img-credit"><span>Credit</span> Archives Gastronomiques / Lhasa</figcaption>
                         </figure>
                         <div className="split-content">
                             <h3>Momos & Rituels</h3>
@@ -159,6 +165,7 @@ const Society = () => {
                                 loading="lazy"
                                 decoding="async"
                             />
+                            <figcaption className="img-credit"><span>Source</span> Coll. Particulière de Mme Pema</figcaption>
                         </figure>
                         <div className="split-content">
                             <h3>Po Cha (Thé au Beurre)</h3>
@@ -177,13 +184,16 @@ const Society = () => {
                 </div>
 
                 <div className="dossier-intro">
-                    <img
-                        src={image8}
-                        alt="Glaciers himalayens"
-                        className="dossier-hero-img"
-                        loading="lazy"
-                        decoding="async"
-                    />
+                    <figure className="dossier-hero-figure">
+                        <img
+                            src={image8}
+                            alt="Glaciers himalayens"
+                            className="dossier-hero-img"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <figcaption className="img-credit"><span>Source</span> Geological Survey of Tibet</figcaption>
+                    </figure>
                     <div className="dossier-intro-text">
                         <h3>Le Château d'Eau de l'Asie</h3>
                         <p>Né de la collision titanesque entre la plaque indienne et eurasienne il y a 50 millions d'années. Le plateau contient la plus grande réserve de glace hors des pôles géographiques. Près de 2 milliards d'humains dépendent de ses eaux.</p>
@@ -213,6 +223,7 @@ const Society = () => {
                                 <div className="carousel-card" key={animal.id}>
                                     <figure className="card-image-holder">
                                         <img src={animal.image} alt={animal.commonName} loading="lazy" decoding="async" />
+                                        <figcaption className="img-credit"><span>Credit</span> {animal.credit}</figcaption>
                                     </figure>
                                     <div className="card-text-content">
                                         <span className="scientific-meta">{animal.scientificName}</span>
