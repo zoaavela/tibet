@@ -33,7 +33,7 @@ function DaggerWithHotspots({ activePoint, setActivePoint, isLocating }) {
                 {POINTS.map((pt) => (
                     <Html key={pt.id} position={pt.pos} center zIndexRange={[100, 0]}>
                         <div
-                            className={`glow-dot ${activePoint?.id === pt.id ? "active" : ""} ${isLocating ? "locating" : ""}`}
+                            className={`glow-dot ${activePoint?.id === pt.id ? "active" : ""} ${isLocating ? "locating" : ""} ${activePoint ? "mobile-hidden" : ""}`}
                             onPointerDown={(e) => {
                                 e.stopPropagation();
                                 setActivePoint(pt);
@@ -65,10 +65,13 @@ export default function Exploration() {
     }, []);
 
     return (
-        <div className="explore-page-snap-container">
+        <div className={`explore-page-snap-container ${activePoint ? "no-snap" : ""}`}>
             {/* --- SECTION 1 : SCÈNE 3D IMMERSIVE --- */}
             <section id="scene-3d" className="explore-3d-scene">
                 <div className="explore-overlay">
+                    {/* Laser Scan Effect */}
+                    <div className={`scan-line ${isLocating ? "active" : ""}`} />
+
                     <div className="museum-label">
                         <div className="label-meta">
                             <span className="label-number">01</span>
@@ -88,7 +91,11 @@ export default function Exploration() {
                     </div>
 
                     {activePoint && (
-                        <div className="info-side-panel">
+                        <div 
+                            className="info-side-panel"
+                            onWheel={(e) => e.stopPropagation()}
+                            onPointerDown={(e) => e.stopPropagation()}
+                        >
                             <div className="side-panel-header">
                                 <span className="panel-category">Détail Artefact</span>
                                 <button className="close-panel" onClick={() => setActivePoint(null)}>✕</button>

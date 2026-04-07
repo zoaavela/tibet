@@ -37,7 +37,12 @@ export default function CustomGlobe() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const baseView = { lat: 20, lng: 80, altitude: 2.5 };
+  const isMobile = dimensions.width < 768;
+  const baseView = { 
+    lat: 20, 
+    lng: 80, 
+    altitude: isMobile ? 3.5 : 2.5 
+  };
 
   useEffect(() => {
     const globe = globeRef.current;

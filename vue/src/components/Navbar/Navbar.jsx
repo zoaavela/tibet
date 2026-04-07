@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
 import "./Navbar.css";
 
@@ -55,11 +55,18 @@ const MEGA_CONTENT = {
 export default function Navbar({ currentPage = "home", onNavigate }) {
   const [openMega, setOpenMega] = useState(null);
   const [showNav, setShowNav] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
   const navRef = useRef(null);
+
+  // --- Reset mobile menu on route change ---
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   // --- Scroll Tracking pour Hide On Scroll ---
   useEffect(() => {
@@ -134,7 +141,7 @@ export default function Navbar({ currentPage = "home", onNavigate }) {
   return (
     <>
       <header
-        className={`mh-root${showNav ? "" : " hidden"}`}
+        className={`mh-root${showNav ? "" : " hidden"}${isMobileMenuOpen ? " mobile-open" : ""}`}
         data-theme={theme}
         ref={navRef}
         onMouseLeave={() => setOpenMega(null)}
@@ -159,8 +166,8 @@ export default function Navbar({ currentPage = "home", onNavigate }) {
             Immersion au Tibet
           </button>
 
-          {/* Nav */}
-          <nav className="mh-nav">
+          {/* Nav (Desktop) */}
+          <nav className="mh-nav desktop-only">
             {NAV_LINKS.map(link => (
               <button
                 key={link.id}
@@ -176,7 +183,7 @@ export default function Navbar({ currentPage = "home", onNavigate }) {
           {/* Right */}
           <div className="mh-right">
             <button
-              className="mh-btn"
+              className="mh-btn desktop-only"
               title="Changer de thème"
               onClick={() => { setOpenMega(null); toggleTheme(); }}
             >
@@ -198,6 +205,52 @@ export default function Navbar({ currentPage = "home", onNavigate }) {
                 </svg>
               )}
             </button>
+
+            {/* Hamburger Mobile */}
+            <button 
+              className={`mh-burger ${isMobileMenuOpen ? "active" : ""}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Menu"
+            >
+              <span className="burger-line"></span>
+              <span className="burger-line"></span>
+            </button>
+          </div>
+
+          {/* Mobile Drawer */}
+          <div className={`mh-mobile-drawer ${isMobileMenuOpen ? "open" : ""}`}>
+            <div className="mh-drawer-content">
+              {Object.keys(MEGA_CONTENT).map((key) => {
+                const section = MEGA_CONTENT[key];
+                return (
+                  <div key={key} className="drawer-section">
+                    <p className="drawer-section-label">{section.label}</p>
+                    <div className="drawer-items">
+                      {section.items.map((item, i) => (
+                        <Link
+                          key={i}
+                          to={item.path}
+                          className="drawer-item"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <span className="drawer-item-num">{item.num}</span>
+                          <span className="drawer-item-name">{item.name}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+              
+              <div className="drawer-footer">
+                <button 
+                  className="drawer-theme-toggle" 
+                  onClick={() => { toggleTheme(); setIsMobileMenuOpen(false); }}
+                >
+                  Mode {theme === "dark" ? "Clair" : "Sombre"}
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* Mega panel */}

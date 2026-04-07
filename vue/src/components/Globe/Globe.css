@@ -139,3 +139,25 @@
   pointer-events: none;
   z-index: 1;
 }
+
+@media (max-width: 768px) {
+  .intro-text h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.15em;
+    padding: 0 10vw;
+  }
+
+  .intro-text p {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    padding: 0 10vw;
+  }
+
+  .globe-ui-container {
+    padding-bottom: 12vh;
+  }
+
+  .ui-bottom {
+    font-size: 0.55rem;
+  }
+}

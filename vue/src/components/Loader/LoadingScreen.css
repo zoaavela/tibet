@@ -18,8 +18,8 @@
 }
 
 .knot-wrapper {
-  width: 160px;
-  height: 160px;
+  width: clamp(100px, 40vw, 160px);
+  height: clamp(100px, 40vw, 160px);
   position: relative;
   /* Rotation de 90° pour l'effet "allongé" horizontal comme demandé */
   transform: rotate(90deg);

@@ -408,14 +408,36 @@
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .chronicle-chapter {
-        grid-template-columns: 200px 1fr;
-        gap: 4vw;
+@media (max-width: 900px) {
+    .chronicle-hero {
+        flex-direction: column;
+        height: auto;
+        min-height: 80vh;
     }
 
-    .timeline-spine {
-        left: calc(var(--pad-x) + 100px);
+    .chr-hero-text-content {
+        flex: none;
+        padding: 6rem 5vw 4rem;
+        text-align: center;
+        order: 2;
+    }
+
+    .chr-hero-image-container {
+        flex: none;
+        height: 45vh;
+        order: 1;
+    }
+
+    .chr-hero-title {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
+
+    .chr-hero-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+        line-height: 1.6;
     }
 }
 
@@ -424,9 +446,13 @@
         display: none;
     }
 
+    .chronicle-timeline-wrapper {
+        padding: 0 6vw;
+    }
+
     .chronicle-chapter {
         grid-template-columns: 1fr;
-        padding: 8vh 0;
+        padding: 6vh 0;
         gap: 2rem;
     }
 
@@ -446,6 +472,8 @@
     .narrative-figure figcaption {
         margin-left: 0;
         width: 100%;
+        padding: 1.5rem;
+        margin-top: -1.5rem;
     }
 
     .narrative-split,

@@ -9,6 +9,46 @@
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    transition: scroll-snap-type 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* --- Scan Line Effect --- */
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--accent, #A68966), transparent);
+    box-shadow: 0 0 20px var(--accent);
+    z-index: 200;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.scan-line.active {
+    animation: scanMoveMobile 1.2s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+@keyframes scanMoveMobile {
+    0% { top: 10%; opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { top: 90%; opacity: 0; }
+}
+
+@media (max-width: 900px) {
+    .explore-page-snap-container {
+        height: auto;
+        min-height: calc(100vh - 60px);
+        scroll-snap-type: none;
+        overflow-y: visible;
+    }
+}
+
+.explore-page-snap-container.no-snap {
+    scroll-snap-type: none;
 }
 
 /* --- Section 3D --- */
@@ -21,6 +61,14 @@
     overflow: hidden;
     z-index: 1;
     scroll-snap-align: start;
+}
+
+@media (max-width: 900px) {
+    .explore-3d-scene {
+        height: calc(100vh - 60px);
+        min-height: 500px;
+        scroll-snap-align: none;
+    }
 }
 
 .canvas-3d {
@@ -104,17 +152,21 @@
     border-left: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 0; /* Remove fixed padding here */
     z-index: 100;
     box-shadow: -20px 0 60px rgba(0, 0, 0, 0.4);
     animation: panelSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    /* NEW: Scrolability */
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 .side-panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4rem;
+    padding: 3rem 3rem 0; /* Apply padding individually */
+    margin-bottom: 2rem; /* Reduced from 4rem */
 }
 
 .panel-category {
@@ -137,6 +189,10 @@
 .close-panel:hover {
     transform: rotate(90deg);
     color: var(--text-primary);
+}
+
+.panel-content {
+    padding: 0 3rem 3rem; /* Apply padding individually */
 }
 
 .panel-content h3 {
@@ -220,6 +276,19 @@
 }
 
 /* L'effet de localisation (pendant 1s) */
+.glow-dot.active {
+    transform: scale(2);
+    border-color: #fff;
+    box-shadow: 0 0 20px #fff;
+}
+
+@media (max-width: 768px) {
+    .glow-dot.mobile-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
 .glow-dot.locating {
     transform: scale(2.5);
     background-color: var(--accent, #A68966);
@@ -331,6 +400,15 @@
     scroll-snap-align: start;
 }
 
+@media (max-width: 900px) {
+    .explore-article {
+        height: auto;
+        min-height: 100vh;
+        padding: 5rem 7vw;
+        scroll-snap-align: none;
+    }
+}
+
 .article-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -388,12 +466,30 @@
 /* --- Responsive --- */
 @media (max-width: 900px) {
     .article-inner {
-        grid-template-columns: 1fr;
-        gap: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        max-width: 100%;
+    }
+
+    .article-header {
+        text-align: left;
     }
 
     .article-title {
+        font-size: 2.2rem;
         max-width: 100%;
+    }
+
+    .article-intro {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .article-text p {
+        font-size: 0.95rem;
+        line-height: 1.8;
     }
 }
 
@@ -431,21 +527,146 @@
 }
 
 @media (max-width: 768px) {
-    .point-card {
-        align-self: center;
-        margin-bottom: 5vh;
+    .info-side-panel {
+        top: auto;
+        right: 0;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        min-width: 100%;
+        height: 50vh;
+        border-left: none;
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.4);
+        padding: 2rem;
+        background: rgba(var(--bg-primary-rgb, 8, 8, 8), 0.95);
+        animation: panelSlideUpMobile 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 500; /* Ensure it stays above everything */
     }
 
-    .article-grid {
+    @keyframes panelSlideUpMobile {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .side-panel-header {
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+
+    .panel-content {
+        padding: 0;
+    }
+
+    .panel-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .museum-label {
+        padding-top: 2rem;
+    }
+
+    .label-title {
+        font-size: 2.5rem;
+    }
+
+    .article-inner {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .article-title {
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
 
     .article-lead {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .explore-overlay {
+        padding: 5vh 6vw;
+    }
+
+    .museum-label {
+        top: 0;
+        padding: 0;
+    }
+@media (max-width: 480px) {
+    .explore-overlay {
+        padding: 2rem;
+    }
+
+    .locate-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        background: rgba(var(--bg-primary-rgb, 0, 0, 0), 0.4);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--accent);
+        z-index: 20;
+    }
+
+    .locate-text {
+        display: none;
+    }
+
+    .locate-icon {
+        margin: 0;
+        font-size: 1.2rem;
+        color: var(--accent);
+    }
+
+    .museum-label {
+        top: 2rem;
+        max-width: 70%;
+    }
+
+    .label-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .label-meta {
+        font-size: 0.6rem;
+    }
+}
+    .label-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .label-divider {
+        display: none;
+    }
+
+    .label-meta {
+        margin-bottom: 0.5rem;
+    }
+
+    .locate-btn {
+        margin-top: 1rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.55rem;
+        background: rgba(var(--bg-primary-rgb, 0, 0, 0), 0.4);
+    }
+
+    .drag-hint {
+        bottom: 7rem;
     }
 }
