@@ -20,7 +20,7 @@ export default function Gallery() {
             meta: "Photographie",
             desc: "Alignement de moulins à prières traditionnels en action. Leur rotation rapide libère les mantras inscrits vers les cieux, diffusant la compassion et la sagesse dans le vent.",
             img: image1,
-            credit: "Archives Musée / Lhasa"
+            credit: "Tsem Rinpoche - Spectacular Dorje Shugden Mural in Kathmandu, Nepal!",
         },
         {
             id: 2,
@@ -28,7 +28,7 @@ export default function Gallery() {
             meta: "Photographie",
             desc: "L'intérieur d'un temple tibétain révélant une architecture complexe et des ornements foisonnants. Des statues dorées et des peintures rituelles cartographient le cosmos bouddhiste et le chemin vers l'éveil.",
             img: image2,
-            credit: "Fonds Gonpo / 1924"
+            credit: "Frederic Hodiesne via Adobe Stock",
         },
         {
             id: 3,
@@ -36,7 +36,7 @@ export default function Gallery() {
             meta: "Peinture / Thangka",
             desc: "Une peinture de Thangka complexe dépeignant un mandala dynamique de déités protectrices. La géométrie et les couleurs vives symbolisent la transmutation des passions en sagesse et la protection du Dharma.",
             img: image3,
-            credit: "Rubin Museum / New York"
+            credit: "Tibet Art Wallpapers",
         },
         {
             id: 4,
@@ -44,7 +44,7 @@ export default function Gallery() {
             meta: "Photographie",
             desc: "Un moine en robe ocre rouge gravit les marches de pierre séculaires. Le contraste puissant entre les couleurs et la chaux d'un blanc éclatant définit l'architecture et la dévotion monastique.",
             img: image4,
-            credit: "Coll. Particulière / Lhasa"
+            credit: "iStock",
         },
         {
             id: 5,
@@ -52,7 +52,7 @@ export default function Gallery() {
             meta: "Peinture ancienne / Fresque",
             desc: "Détail d'une peinture ancienne illustrant une caravane de cavaliers tibétains. L'œuvre, accompagnée de calligraphies, narre l'histoire épique, la culture martiale et les traditions équestres des peuples du toit du monde.",
             img: image5,
-            credit: "UNESCO / Heritage Fund"
+            credit: "Dunhuang Mogao Cave via Wikimedia Commons",
         },
         {
             id: 6,
@@ -60,7 +60,7 @@ export default function Gallery() {
             meta: "Photographie",
             desc: "Un homme descend les marches d'un édifice imposant. Les hauts murs rouges, ponctués de fenêtres géométriques, créent une composition visuelle minimaliste et vertigineuse, préparant l'esprit à l'annihilation de lego.",
             img: image6,
-            credit: "Institute of Tibetan Arts"
+            credit: "dabananabunch via Flickr",
         },
         {
             id: 7,
@@ -68,7 +68,7 @@ export default function Gallery() {
             meta: "Photographie",
             desc: "Vue spectaculaire sur l'institut de Larung Gar. Des milliers de petites habitations en bois rouge s'entassent organiquement à flanc de montagne, cœur battant de l'étude et de la pratique du bouddhisme tibétain.",
             img: image7,
-            credit: "National Geographic Creative"
+            credit: "Freepik",
         },
         {
             id: 8,
@@ -76,7 +76,7 @@ export default function Gallery() {
             meta: "Photographie",
             desc: "Des centaines de textes sacrés (pechas) sont empilés dans les rayonnages d'une bibliothèque monastique séculaire. Chaque feuillet, préservé entre bois et tissu, garde la sagesse et les enseignements du Dharma.",
             img: image8,
-            credit: "British Library Archives"
+            credit: "Tibet Trail via Pinterest",
         },
         {
             id: 9,
@@ -84,7 +84,7 @@ export default function Gallery() {
             meta: "Photographie",
             desc: "Une fidèle progresse à travers un océan de lampes à beurre, avec un grand temple doré s'élevant en arrière-plan. La convergence des lumières et de l'architecture cartographie le cosmos bouddhiste et le chemin vers l'éveil.",
             img: image9,
-            credit: "Tibet Museum / Dharamsala"
+            credit: "Freepik",
         },
         {
             id: 10,
@@ -92,8 +92,8 @@ export default function Gallery() {
             meta: "Photographie",
             desc: "Portrait d'une jeune fille tibétaine parée de bijoux traditionnels en turquoise et corail. Son regard intense et fier incarne la résilience, la culture et l'identité des peuples de haute altitude.",
             img: image10,
-            credit: "Tibet Heritage Fund"
-        }
+            credit: "@wroclaw.here via Instagram",
+        },
     ];
 
     return (
@@ -110,10 +110,23 @@ export default function Gallery() {
             <div className="gallery-grid">
                 {galleryItems.map((item) => (
                     <article key={item.id} className="gallery-item">
-                        <div className="gallery-img-wrapper">
-                            <img src={item.img} alt={item.title} />
-                            <figcaption className="img-credit"><span>Credit</span> {item.credit}</figcaption>
-                        </div>
+                        <figure className="gallery-figure">
+                            <div className="gallery-img-wrapper">
+                                <img src={item.img} alt={item.title} />
+                            </div>
+                            <span className="img-credit">
+                                (
+                                {[
+                                    "Tibet Art Wallpapers",
+                                    "iStock",
+                                    "Freepik",
+                                    "Tsem Rinpoche - Spectacular Dorje Shugden Mural in Kathmandu, Nepal!",
+                                ].includes(item.credit)
+                                    ? "Source"
+                                    : "Crédit"}{" "}
+                                : {item.credit})
+                            </span>
+                        </figure>
                         <div className="gallery-info">
                             <h2>{item.title}</h2>
                             <p className="gallery-meta">{item.meta}</p>

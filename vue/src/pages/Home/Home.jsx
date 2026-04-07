@@ -2,15 +2,15 @@ import { useEffect } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
-import image1 from '../../assets/home/2.avif';
-import image2 from '../../assets/home/3.png';
-import image3 from '../../assets/home/4.avif';
+import image1 from "../../assets/home/2.avif";
+import image2 from "../../assets/home/3.png";
+import image3 from "../../assets/home/4.avif";
 
 export default function Home() {
     // Préchargement des images critiques pour une transition fluide sans "pop-in"
     useEffect(() => {
         const assets = [image1, image2, image3];
-        assets.forEach(src => {
+        assets.forEach((src) => {
             const img = new Image();
             img.src = src;
         });
@@ -18,7 +18,6 @@ export default function Home() {
 
     return (
         <div className="home-wrapper">
-
             {/* ── HERO IMMERSIF (LAYOUT RAFFINÉ) ────────── */}
             <header className="hero-immersive">
                 <div className="hero-overlay" />
@@ -27,15 +26,22 @@ export default function Home() {
                 <div className="hero-content">
                     {/* Côte gauche : Petit titre et description */}
                     <div className="hero-left-side">
-                        <h3 className="hero-side-title">Sagesse & Terre d'Éveil</h3>
+                        <h3 className="hero-side-title">
+                            Sagesse & Terre d'Éveil
+                        </h3>
                         <p className="hero-side-desc">
-                            Une immersion thématique au cœur de la civilisation tibétaine,
-                            traversant l'art rituel et les sciences de l'esprit.
+                            Une immersion thématique au cœur de la civilisation
+                            tibétaine, traversant l'art rituel et les sciences
+                            de l'esprit.
                         </p>
                     </div>
                 </div>
 
-                <a href="#heritage" className="hero-scroll" aria-label="Défiler vers le bas">
+                <a
+                    href="#heritage"
+                    className="hero-scroll"
+                    aria-label="Défiler vers le bas"
+                >
                     <span className="hero-scroll-line" />
                     <span>Défiler</span>
                 </a>
@@ -49,11 +55,16 @@ export default function Home() {
                         <div className="text-side">
                             <h2>L'esprit de l'Himalaya</h2>
                             <p>
-                                Plongez au cœur de l'identité tibétaine. Des hauts plateaux du Changtang à la calligraphie sacrée,
-                                découvrez une civilisation millénaire où la spiritualité, l'artisanat et les cycles de la nature
-                                s'entrelacent pour former un héritage unique au monde.
+                                Plongez au cœur de l'identité tibétaine. Des
+                                hauts plateaux du Changtang à la calligraphie
+                                sacrée, découvrez une civilisation millénaire où
+                                la spiritualité, l'artisanat et les cycles de la
+                                nature s'entrelacent pour former un héritage
+                                unique au monde.
                             </p>
-                            <Link to="/menu" className="explore-btn">Explorer la culture</Link>
+                            <Link to="/menu" className="explore-btn">
+                                Explorer la culture
+                            </Link>
                         </div>
                     </div>
                     <div className="image-side">
@@ -63,7 +74,9 @@ export default function Home() {
                             loading="lazy"
                             decoding="async"
                         />
-                        <span className="img-credit"><span>Credit</span> Fonds Gonpo / Archives Musée</span>
+                        <span className="img-credit">
+                            (Crédit : @shinmiura via Instagram)
+                        </span>
                     </div>
                 </div>
             </section>
@@ -71,7 +84,6 @@ export default function Home() {
             {/* ── 02 : LE PHURBA (CORRIGÉ - LAYOUT STACKED PROPRE & IMAGE AGRANDIE) ─ */}
             <section className="nav-section section-objet">
                 <div className="objet-clean-stacked-layout">
-
                     {/* 1. Titre Phurba : En haut, centré, propre */}
                     <h2 className="section-main-title">ཕུར་པ།</h2>
 
@@ -83,27 +95,32 @@ export default function Home() {
                             loading="lazy"
                             decoding="async"
                         />
-                        <span className="img-credit"><span>Source</span> Museum of Tibetan Culture / Beijing</span>
+                        <span className="img-credit">
+                            (Source : Sacred Treasures - Iron Phurba)
+                        </span>
                     </div>
 
                     {/* 3. Bloc Texte : En dessous de l'image */}
                     <div className="content-box">
                         <span className="num">Focus sur l'objet</span>
                         <div className="text-side">
-                            <h2 className="sr-only">L'orfèvrerie du vide</h2> {/* Masqué mais présent */}
+                            <h2 className="sr-only">L'orfèvrerie du vide</h2>{" "}
+                            {/* Masqué mais présent */}
                             <p>
-                                La dague à trois pans qui cloue les démons de l'ego. Objet de puissance
-                                et de libération au cœur du tantrisme tibétain.
+                                La dague à trois pans qui cloue les démons de
+                                l'ego. Objet de puissance et de libération au
+                                cœur du tantrisme tibétain.
                             </p>
-                            <Link to="/exploration" className="explore-btn btn-objet">Analyser l'objet</Link>
+                            <Link
+                                to="/exploration"
+                                className="explore-btn btn-objet"
+                            >
+                                Analyser l'objet
+                            </Link>
                         </div>
                     </div>
-
                 </div>
             </section>
-
-
-
 
             {/* ── 03 : LES ARCHIVES (DA Standard) ─────────── */}
             <section className="nav-section section-archives">
@@ -115,18 +132,24 @@ export default function Home() {
                             loading="lazy"
                             decoding="async"
                         />
-                        <span className="img-credit"><span>Credit</span> British Library Archives</span>
+                        <span className="img-credit">
+                            (Crédit : Henry Han via Stills)
+                        </span>
                     </div>
                     <div className="content-box">
                         <span className="num">Fonds documentaire</span>
                         <div className="text-side">
                             <h2>La mémoire du Tibet</h2>
                             <p>
-                                Parcourez nos ressources documentaires : galeries photographiques inédites,
-                                sources bibliographiques et archives multimédia. Le socle de notre immersion
-                                au cœur de la civilisation tibétaine.
+                                Parcourez nos ressources documentaires :
+                                galeries photographiques inédites, sources
+                                bibliographiques et archives multimédia. Le
+                                socle de notre immersion au cœur de la
+                                civilisation tibétaine.
                             </p>
-                            <Link to="/archives" className="explore-btn">Consulter les archives</Link>
+                            <Link to="/archives" className="explore-btn">
+                                Consulter les archives
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -134,7 +157,6 @@ export default function Home() {
 
             {/* ── FOOTER INTÉGRÉ AU SNAP ── */}
             <Footer />
-
         </div>
     );
 }

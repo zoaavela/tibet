@@ -1,59 +1,58 @@
-import React from 'react';
-import './Atlas.css';
+import React from "react";
+import "./Atlas.css";
 
-import hero from '../../assets/culture/atlas/1.avif';
-import image1 from '../../assets/culture/atlas/sowa-rigpa/1.avif';
-import image4 from '../../assets/culture/atlas/artisanat/1.avif';
-import image5 from '../../assets/culture/atlas/artisanat/2.avif';
-import image6 from '../../assets/culture/atlas/langage/1.webp';
-import image7 from '../../assets/culture/atlas/langage/2.avif';
-import image8 from '../../assets/culture/atlas/langage/3.jpg';
-import image9 from '../../assets/culture/atlas/langage/4.jpg';
-import image10 from '../../assets/culture/atlas/langage/5.jpg';
-import image11 from '../../assets/culture/atlas/langage/6.webp';
-
+import hero from "../../assets/culture/atlas/1.avif";
+import image1 from "../../assets/culture/atlas/sowa-rigpa/1.avif";
+import image4 from "../../assets/culture/atlas/artisanat/1.avif";
+import image5 from "../../assets/culture/atlas/artisanat/2.avif";
+import image6 from "../../assets/culture/atlas/langage/1.webp";
+import image7 from "../../assets/culture/atlas/langage/2.avif";
+import image8 from "../../assets/culture/atlas/langage/3.jpg";
+import image9 from "../../assets/culture/atlas/langage/4.jpg";
+import image10 from "../../assets/culture/atlas/langage/5.jpg";
+import image11 from "../../assets/culture/atlas/langage/6.webp";
 
 const colorCodes = [
     {
         id: 1,
-        commonName: 'Bleu',
-        scientificName: 'ESPACE',
+        commonName: "Bleu",
+        scientificName: "ESPACE",
         image: image8,
-        description: 'La première toile du fil. Englobante, elle représente l\'atmosphère supérieure éternelle.',
-        credit: 'Archives Musée / Lhasa'
+        description:
+            "La première toile du fil. Englobante, elle représente l'atmosphère supérieure éternelle.",
     },
     {
         id: 2,
-        commonName: 'Blanc',
-        scientificName: 'AIR',
+        commonName: "Blanc",
+        scientificName: "AIR",
         image: image10,
-        description: 'Mouvement des nuages, vecteur principal des prières emportées mécaniquement.',
-        credit: 'Coll. Particulière'
+        description:
+            "Mouvement des nuages, vecteur principal des prières emportées mécaniquement.",
     },
     {
         id: 3,
-        commonName: 'Rouge',
-        scientificName: 'FEU',
+        commonName: "Rouge",
+        scientificName: "FEU",
         image: image9,
-        description: 'Température thermique et éveil intellectuel, central à la chaîne des Lungta.',
-        credit: 'Fonds Gonpo'
+        description:
+            "Température thermique et éveil intellectuel, central à la chaîne des Lungta.",
     },
     {
         id: 4,
-        commonName: 'Jaune',
-        scientificName: 'TERRE',
+        commonName: "Jaune",
+        scientificName: "TERRE",
         image: image7,
-        description: 'Ancrage jaune. La géologie solide finale protégeant la sédimentation du rite d\'altitude.',
-        credit: 'Tibet Museum / 1954'
+        description:
+            "Ancrage jaune. La géologie solide finale protégeant la sédimentation du rite d'altitude.",
     },
     {
         id: 5,
-        commonName: 'Vert',
-        scientificName: 'EAU',
+        commonName: "Vert",
+        scientificName: "EAU",
         image: image11,
-        description: 'Vitalité fluide. Elle incarne le mouvement des rivières sacrées et la régénération du vivant.',
-        credit: 'Fonds National'
-    }
+        description:
+            "Vitalité fluide. Elle incarne le mouvement des rivières sacrées et la régénération du vivant.",
+    },
 ];
 
 const Atlas = () => {
@@ -62,9 +61,15 @@ const Atlas = () => {
             {/* --- HERO NARRATIF --- */}
             <header className="editorial-hero">
                 <div className="soc-hero-content">
-                    <h1 className="soc-hero-title">Savoirs<br />du Plateau</h1>
+                    <h1 className="soc-hero-title">
+                        Savoirs
+                        <br />
+                        du Plateau
+                    </h1>
                     <p className="soc-hero-subtitle">
-                        Une immersion documentaire à travers l'ingénierie médicale, la maîtrise des alliages et l'algorithme des signes du Tibet antique.
+                        Une immersion documentaire à travers l'ingénierie
+                        médicale, la maîtrise des alliages et l'algorithme des
+                        signes du Tibet antique.
                     </p>
                 </div>
                 <div className="soc-hero-image-container">
@@ -95,25 +100,47 @@ const Atlas = () => {
                             loading="lazy"
                             decoding="async"
                         />
-                        <figcaption className="img-credit"><span>Source</span> Archives Sowa Rigpa / Lhasa</figcaption>
+                        <span className="img-credit">
+                            (Crédit : Sangyé Gyamtso - Le Béryl Bleu via
+                            Wikimedia Commons)
+                        </span>
                     </figure>
 
                     <div className="feature-text-content">
                         <h3>L'Analyse du Gyushi</h3>
                         <p className="lead-paragraph">
-                            Articulée au 8ème siècle via le Gyushi, la base chirurgicale et végétale tibétaine est interdépendante. Ici la pathologie est simplement l'effet d'une dissonance : un accord rompu entre le minéral, le mental et la météo.
+                            Articulée au 8ème siècle via le Gyushi, la base
+                            chirurgicale et végétale tibétaine est
+                            interdépendante. Ici la pathologie est simplement
+                            l'effet d'une dissonance : un accord rompu entre le
+                            minéral, le mental et la météo.
                         </p>
 
                         <div className="text-columns">
                             <div className="column">
-                                <span className="col-tag">Anatomie Subtile</span>
+                                <span className="col-tag">
+                                    Anatomie Subtile
+                                </span>
                                 <h4>Les Humeurs</h4>
-                                <p>La médecine tibétaine repose sur l'équilibre des trois humeurs : Lung (Vent/Mouvement), Tripa (Bile/Chaleur) et Beken (Phlegme/Stabilité). Leur déséquilibre est la cause première de toute souffrance organique.</p>
+                                <p>
+                                    La médecine tibétaine repose sur l'équilibre
+                                    des trois humeurs : Lung (Vent/Mouvement),
+                                    Tripa (Bile/Chaleur) et Beken
+                                    (Phlegme/Stabilité). Leur déséquilibre est
+                                    la cause première de toute souffrance
+                                    organique.
+                                </p>
                             </div>
                             <div className="column">
                                 <span className="col-tag">Diagnostic</span>
                                 <h4>La Pulsologie</h4>
-                                <p>L'Amchi interprète le réseau comme un sismographe. Via trois doigts appuyés à l'avant-bras, il discrimine virtuellement douze pouls distaux liés aux organes internes et à leur énergie thermique.</p>
+                                <p>
+                                    L'Amchi interprète le réseau comme un
+                                    sismographe. Via trois doigts appuyés à
+                                    l'avant-bras, il discrimine virtuellement
+                                    douze pouls distaux liés aux organes
+                                    internes et à leur énergie thermique.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -131,24 +158,42 @@ const Atlas = () => {
                 <div className="magazine-layout">
                     <div className="magazine-intro">
                         <p className="drop-cap">L</p>
-                        <p className="intro-text">'artisanat tibétain n'a jamais été la simple production d'objets utilitaires. La transformation de la matière brute revêt une dimension alchimique, répondant à des codifications précises dictées par des traités mathématiques anciens.</p>
+                        <p className="intro-text">
+                            'artisanat tibétain n'a jamais été la simple
+                            production d'objets utilitaires. La transformation
+                            de la matière brute revêt une dimension alchimique,
+                            répondant à des codifications précises dictées par
+                            des traités mathématiques anciens.
+                        </p>
                     </div>
 
                     <div className="ingredient-grid">
                         <div className="ingredient-card">
                             <span className="ing-number">01</span>
                             <h4>Cire Perdue</h4>
-                            <p>Le modèle en cire fond sous l'argile brûlante, laissant place au bronze. Le moule détruit rend chaque statuaire unique.</p>
+                            <p>
+                                Le modèle en cire fond sous l'argile brûlante,
+                                laissant place au bronze. Le moule détruit rend
+                                chaque statuaire unique.
+                            </p>
                         </div>
                         <div className="ingredient-card">
                             <span className="ing-number">02</span>
                             <h4>Trokzo</h4>
-                            <p>Technique du repoussé : feuilles de cuivre gravées à l'envers au poinçon pour orner toits et amulettes.</p>
+                            <p>
+                                Technique du repoussé : feuilles de cuivre
+                                gravées à l'envers au poinçon pour orner toits
+                                et amulettes.
+                            </p>
                         </div>
                         <div className="ingredient-card">
                             <span className="ing-number">03</span>
                             <h4>Namchak</h4>
-                            <p>Le "fer céleste" (météoritique), requis pour la forge de puissantes dagues rituelles comme le Phurba.</p>
+                            <p>
+                                Le "fer céleste" (météoritique), requis pour la
+                                forge de puissantes dagues rituelles comme le
+                                Phurba.
+                            </p>
                         </div>
                     </div>
 
@@ -160,11 +205,19 @@ const Atlas = () => {
                                 loading="lazy"
                                 decoding="async"
                             />
-                            <figcaption className="img-credit"><span>Credit</span> Fonds Gonpo / 1924</figcaption>
+                            <span className="img-credit">
+                                (Crédit : Raimon Kklavins via Unsplash)
+                            </span>
                         </figure>
                         <div className="split-content">
                             <h3>Maîtrise & Tradition</h3>
-                            <p>La création répond à une autarcie technique. L'artisan est souvent un initié capable de manipuler les métaux nobles et les alliages complexes avec une précision mathématique et spirituelle.</p>
+                            <p>
+                                La création répond à une autarcie technique.
+                                L'artisan est souvent un initié capable de
+                                manipuler les métaux nobles et les alliages
+                                complexes avec une précision mathématique et
+                                spirituelle.
+                            </p>
                         </div>
                     </div>
 
@@ -176,11 +229,19 @@ const Atlas = () => {
                                 loading="lazy"
                                 decoding="async"
                             />
-                            <figcaption className="img-credit"><span>Source</span> Collection Musée de l'Homme</figcaption>
+                            <span className="img-credit">
+                                (Source : Front Brake Lights - Collier Ethnique
+                                Style Tibétain)
+                            </span>
                         </figure>
                         <div className="split-content">
                             <h3>L'Économie Lapidaire</h3>
-                            <p>Les pierres recèlent de la valeur marchande et sociale. Le corail rouge et les agates Dzi composent un patrimoine mobile, essentiel à l'économie des familles nomades du haut plateau.</p>
+                            <p>
+                                Les pierres recèlent de la valeur marchande et
+                                sociale. Le corail rouge et les agates Dzi
+                                composent un patrimoine mobile, essentiel à
+                                l'économie des familles nomades du haut plateau.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -203,11 +264,18 @@ const Atlas = () => {
                             loading="lazy"
                             decoding="async"
                         />
-                        <figcaption className="img-credit"><span>Source</span> Manuscrit de l'Université de Namgyal</figcaption>
+                        <span className="img-credit">
+                            (Crédit : British Library / IDP - Réf. IOL Tib J 55)
+                        </span>
                     </figure>
                     <div className="dossier-intro-text">
                         <h3>Une Langue Manufacturée</h3>
-                        <p>L'alphabet syllabique fut techniquement compilé au VIIe siècle par ordonnance royale. Naviguant entre la rigueur angulaire des textes Uchen et la fluidité de la main Ume.</p>
+                        <p>
+                            L'alphabet syllabique fut techniquement compilé au
+                            VIIe siècle par ordonnance royale. Naviguant entre
+                            la rigueur angulaire des textes Uchen et la fluidité
+                            de la main Ume.
+                        </p>
                     </div>
                 </div>
 
@@ -233,9 +301,19 @@ const Atlas = () => {
                             {colorCodes.map((color) => (
                                 <div className="carousel-card" key={color.id}>
                                     <figure className="card-image-holder">
-                                        <img src={color.image} alt={color.commonName} loading="lazy" decoding="async" />
-                                        <div className="museum-caption-tag">{color.scientificName}</div>
-                                        <figcaption className="img-credit"><span>Credit</span> {color.credit}</figcaption>
+                                        <img
+                                            src={color.image}
+                                            alt={color.commonName}
+                                            loading="lazy"
+                                            decoding="async"
+                                        />
+                                        <div className="museum-caption-tag">
+                                            {color.scientificName}
+                                        </div>
+                                        <figcaption className="img-credit">
+                                            <span>Source : </span>{" "}
+                                            {color.credit}
+                                        </figcaption>
                                     </figure>
                                     <div className="card-text-content">
                                         <h4>{color.commonName}</h4>
@@ -250,7 +328,13 @@ const Atlas = () => {
 
                 <div className="editorial-alert-box">
                     <h3>L'Algorithme Thangka</h3>
-                    <p>Dessiner un Thangka est une ingénierie dogmatique absolue pilotée par l'iconométrie. La grille pré-construite fixe mathématiquement le moindre pli oculaire. Une seule proportion disloquée invalide l'œuvre.</p>
+                    <p>
+                        Dessiner un Thangka est une ingénierie dogmatique
+                        absolue pilotée par l'iconométrie. La grille
+                        pré-construite fixe mathématiquement le moindre pli
+                        oculaire. Une seule proportion disloquée invalide
+                        l'œuvre.
+                    </p>
                 </div>
             </section>
         </main>

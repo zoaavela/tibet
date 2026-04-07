@@ -39,12 +39,16 @@
     margin-top: 6rem;
 }
 
+.gallery-figure {
+    margin-bottom: 1.5rem;
+}
+
 .gallery-img-wrapper {
     width: 100%;
     height: 50vh;
     /* CONTRAINTE DE HAUTEUR : 50% de l'écran maximum */
     overflow: hidden;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.4rem;
     background-color: var(--bg-primary);
 }
 

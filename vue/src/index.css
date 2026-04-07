@@ -56,3 +56,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.img-credit {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+

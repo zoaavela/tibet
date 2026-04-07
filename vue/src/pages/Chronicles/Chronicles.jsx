@@ -1,14 +1,14 @@
-import React from 'react';
-import './Chronicles.css';
+import React from "react";
+import "./Chronicles.css";
 
-import hero from '../../assets/culture/chronicles/1.webp';
-import image1 from '../../assets/culture/chronicles/empire/1.avif';
-import image2 from '../../assets/culture/chronicles/empire/2.png';
-import image3 from '../../assets/culture/chronicles/gesar/1.avif';
-import image4 from '../../assets/culture/chronicles/gesar/2.jpg';
-import image5 from '../../assets/culture/chronicles/architecture/1.avif';
-import image6 from '../../assets/culture/chronicles/architecture/2.avif';
-import image7 from '../../assets/culture/chronicles/architecture/3.webp';
+import hero from "../../assets/culture/chronicles/1.webp";
+import image1 from "../../assets/culture/chronicles/empire/1.avif";
+import image2 from "../../assets/culture/chronicles/empire/2.png";
+import image3 from "../../assets/culture/chronicles/gesar/1.avif";
+import image4 from "../../assets/culture/chronicles/gesar/2.jpg";
+import image5 from "../../assets/culture/chronicles/architecture/1.avif";
+import image6 from "../../assets/culture/chronicles/architecture/2.avif";
+import image7 from "../../assets/culture/chronicles/architecture/3.webp";
 
 const Chronicles = () => {
     return (
@@ -16,8 +16,16 @@ const Chronicles = () => {
             {/* --- HERO NARRATIF --- */}
             <header className="chronicle-hero">
                 <div className="chr-hero-text-content">
-                    <h1 className="chr-hero-title">Le Toit<br />du Monde</h1>
-                    <p className="chr-hero-subtitle">Une exploration narrative du Tibet antique : de la fureur martiale du Yarlung à l'ingénierie minérale du Potala.</p>
+                    <h1 className="chr-hero-title">
+                        Le Toit
+                        <br />
+                        du Monde
+                    </h1>
+                    <p className="chr-hero-subtitle">
+                        Une exploration narrative du Tibet antique : de la
+                        fureur martiale du Yarlung à l'ingénierie minérale du
+                        Potala.
+                    </p>
                 </div>
                 <div className="chr-hero-image-container">
                     <img
@@ -40,7 +48,9 @@ const Chronicles = () => {
                     <div className="chapter-sticky-marker">
                         <span className="chapter-num">01</span>
                         <h2 className="chapter-name">Le Yarlung</h2>
-                        <span className="chapter-theme">Histoire & Conquête</span>
+                        <span className="chapter-theme">
+                            Histoire & Conquête
+                        </span>
                     </div>
 
                     <div className="chapter-content">
@@ -52,37 +62,75 @@ const Chronicles = () => {
                                 decoding="async"
                             />
                             <figcaption>
-                                <p>Brisez l'illusion contemporaine d'un havre méditatif pacifiste : le Tibet antique fut d'abord l'un des empires les plus martiaux d'Asie du 7ème siècle.</p>
-                                <p>Armées redoutables, contrôle du bassin du Tarim et pillage furtif de la capitale sino-Tangs – le Yarlung était total.</p>
-                                <div className="img-credit"><span>Credit</span> British Museum / Archaeological Survey</div>
+                                <p>
+                                    Brisez l'illusion contemporaine d'un havre
+                                    méditatif pacifiste : le Tibet antique fut
+                                    d'abord l'un des empires les plus martiaux
+                                    d'Asie du 7ème siècle.
+                                </p>
+                                <p>
+                                    Armées redoutables, contrôle du bassin du
+                                    Tarim et pillage furtif de la capitale
+                                    sino-Tangs – le Yarlung était total.
+                                </p>
+                                <div className="img-credit">
+                                    (Source : Tibet Roads - Pèlerinage au Mt
+                                    Kailash)
+                                </div>
                             </figcaption>
                         </figure>
 
                         <div className="narrative-text-block">
                             <h3>Les Traités Sténographiés</h3>
-                            <p>L'ordre public suivait l'expansion frontalière. Les célèbres accords de frontières sino-tibétaines de 822 ont été actés dans la pierre froide du Jokhang.</p>
-                            <blockquote>« Les Tibétains seront heureux au Tibet, les Chinois seront heureux en Chine. »</blockquote>
+                            <p>
+                                L'ordre public suivait l'expansion frontalière.
+                                Les célèbres accords de frontières
+                                sino-tibétaines de 822 ont été actés dans la
+                                pierre froide du Jokhang.
+                            </p>
+                            <blockquote>
+                                « Les Tibétains seront heureux au Tibet, les
+                                Chinois seront heureux en Chine. »
+                            </blockquote>
                         </div>
 
                         <div className="resource-dossier">
                             <div className="dossier-header">
                                 <h3>Technologies d'Assaut</h3>
-                                <p>La supériorité militaire était ancrée dans la résilience à l'altitude.</p>
+                                <p>
+                                    La supériorité militaire était ancrée dans
+                                    la résilience à l'altitude.
+                                </p>
                             </div>
                             <div className="dossier-cards">
                                 <div className="dossier-card">
                                     <h4>Armure Lamellaire</h4>
-                                    <p>Plaques cuirassées et froides : les cavaliers étaient si lourdement recouverts que le mythe disait qu'on n'en voyait que les yeux féroces.</p>
+                                    <p>
+                                        Plaques cuirassées et froides : les
+                                        cavaliers étaient si lourdement
+                                        recouverts que le mythe disait qu'on
+                                        n'en voyait que les yeux féroces.
+                                    </p>
                                     <span className="card-tag">Infanterie</span>
                                 </div>
                                 <div className="dossier-card">
                                     <h4>Cavalerie Haute</h4>
-                                    <p>Une logistique impitoyable de raids éclairs équestres rendue possible par les montures aguerries à l'hypoxie sévère.</p>
+                                    <p>
+                                        Une logistique impitoyable de raids
+                                        éclairs équestres rendue possible par
+                                        les montures aguerries à l'hypoxie
+                                        sévère.
+                                    </p>
                                     <span className="card-tag">Animisme</span>
                                 </div>
                                 <div className="dossier-card">
                                     <h4>Métallurgie Pure</h4>
-                                    <p>Grandes épées droites ultra-denses – The Yarlung Forge. Marque indélébile de statut d'aristocrate-guerrier pré-religieux.</p>
+                                    <p>
+                                        Grandes épées droites ultra-denses – The
+                                        Yarlung Forge. Marque indélébile de
+                                        statut d'aristocrate-guerrier
+                                        pré-religieux.
+                                    </p>
                                     <span className="card-tag">Forge</span>
                                 </div>
                             </div>
@@ -96,12 +144,26 @@ const Chronicles = () => {
                                     loading="lazy"
                                     decoding="async"
                                 />
-                                <figcaption className="img-credit"><span>Source</span> Museum of Tibetan Culture / Beijing</figcaption>
+                                <span className="img-credit">
+                                    (Source : Proantic - Epée d'Apparat Antique
+                                    Tibet 19e Art)
+                                </span>
                             </figure>
                             <div className="split-text">
                                 <h3>Le Prix du Bouddhisme</h3>
-                                <p>La chute fut causée par l'émergence des monastères. Le clergé bouddhiste exigeait l'exonération des impôts martiaux, vidant peu à peu les coffres et la fureur militaire des armées laïques.</p>
-                                <p>Le régicide du Tsenpo Langdarma brisa l'empire en parcelles isolées, achevant la transition définitive vers la théocratie pacifique sacrée.</p>
+                                <p>
+                                    La chute fut causée par l'émergence des
+                                    monastères. Le clergé bouddhiste exigeait
+                                    l'exonération des impôts martiaux, vidant
+                                    peu à peu les coffres et la fureur militaire
+                                    des armées laïques.
+                                </p>
+                                <p>
+                                    Le régicide du Tsenpo Langdarma brisa
+                                    l'empire en parcelles isolées, achevant la
+                                    transition définitive vers la théocratie
+                                    pacifique sacrée.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -124,16 +186,36 @@ const Chronicles = () => {
                                 decoding="async"
                             />
                             <figcaption>
-                                <p>Plus profond que l'Iliade, plus gigantesque que l'Odyssée. Avec des dizaines de millions de mots articulés à la volée, c'est un testament héroïque.</p>
-                                <p>Une encyclopédie des guerriers, ancrée dans la cosmologie, contant la vie du sauveur nomade descendu écraser les rois-démons.</p>
-                                <span className="img-credit"><span>Credit</span> Rubin Museum of Art / New York</span>
+                                <p>
+                                    Plus profond que l'Iliade, plus gigantesque
+                                    que l'Odyssée. Avec des dizaines de millions
+                                    de mots articulés à la volée, c'est un
+                                    testament héroïque.
+                                </p>
+                                <p>
+                                    Une encyclopédie des guerriers, ancrée dans
+                                    la cosmologie, contant la vie du sauveur
+                                    nomade descendu écraser les rois-démons.
+                                </p>
+                                <span className="img-credit">
+                                    (Source : Etsy - King Gesar Thangka)
+                                </span>
                             </figcaption>
                         </figure>
 
                         <div className="narrative-text-block highlight-block">
                             <h3>Les Bardes Analphabètes</h3>
-                            <p>Le mystère cognitif des <em>Babdrung</em> : ces passeurs de mythologie sont très souvent dépourvus d'éducation textuelle.</p>
-                            <p>Leur récitation titanesque se fait au gré d'une transe. Ils ne mémorisent pas. Ils rapportent lire des "images ou projections" défilant dans leur rétine au rythme de l'histoire.</p>
+                            <p>
+                                Le mystère cognitif des <em>Babdrung</em> : ces
+                                passeurs de mythologie sont très souvent
+                                dépourvus d'éducation textuelle.
+                            </p>
+                            <p>
+                                Leur récitation titanesque se fait au gré d'une
+                                transe. Ils ne mémorisent pas. Ils rapportent
+                                lire des "images ou projections" défilant dans
+                                leur rétine au rythme de l'histoire.
+                            </p>
                             <figure className="inline-img-figure">
                                 <img
                                     src={image4}
@@ -142,30 +224,51 @@ const Chronicles = () => {
                                     loading="lazy"
                                     decoding="async"
                                 />
-                                <figcaption className="img-credit"><span>Credit</span> Smithsonian Institute / 1982</figcaption>
+                                <span className="img-credit">
+                                    (Source : Illume Oy - Film "A Gesar Bard's
+                                    Tale")
+                                </span>
                             </figure>
                         </div>
 
                         <div className="resource-dossier">
                             <div className="dossier-header">
                                 <h3>L'Anatomie du Mythe</h3>
-                                <p>Une saga fractale construite sur une trinité architecturale.</p>
+                                <p>
+                                    Une saga fractale construite sur une trinité
+                                    architecturale.
+                                </p>
                             </div>
                             <div className="dossier-cards vertical">
                                 <div className="dossier-card">
                                     <span className="card-tag">Tome I</span>
                                     <h4>Origine Terrestre</h4>
-                                    <p>Naissance abrupte et hideuse. Un bannissement aux confins du plateau menant à une course de chevaux divine remportant la princesse Drugmo.</p>
+                                    <p>
+                                        Naissance abrupte et hideuse. Un
+                                        bannissement aux confins du plateau
+                                        menant à une course de chevaux divine
+                                        remportant la princesse Drugmo.
+                                    </p>
                                 </div>
                                 <div className="dossier-card">
                                     <span className="card-tag">Tome II</span>
                                     <h4>Les Campagnes</h4>
-                                    <p>Opérations tactiques massives contre les royaumes hostiles (le Nord, Hor, etc.). Un traité complet de militarisme nomade équestre.</p>
+                                    <p>
+                                        Opérations tactiques massives contre les
+                                        royaumes hostiles (le Nord, Hor, etc.).
+                                        Un traité complet de militarisme nomade
+                                        équestre.
+                                    </p>
                                 </div>
                                 <div className="dossier-card">
                                     <span className="card-tag">Tome III</span>
                                     <h4>Dissolution</h4>
-                                    <p>Gesar pacifie les landes, ancre la verticalité cosmique (Dharma) puis disparaît, évaporé dans ses propres cieux sans mourir techniquement.</p>
+                                    <p>
+                                        Gesar pacifie les landes, ancre la
+                                        verticalité cosmique (Dharma) puis
+                                        disparaît, évaporé dans ses propres
+                                        cieux sans mourir techniquement.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +280,9 @@ const Chronicles = () => {
                     <div className="chapter-sticky-marker">
                         <span className="chapter-num">03</span>
                         <h2 className="chapter-name">Murs Inclinés</h2>
-                        <span className="chapter-theme">Espace & Ingénierie</span>
+                        <span className="chapter-theme">
+                            Espace & Ingénierie
+                        </span>
                     </div>
 
                     <div className="chapter-content">
@@ -189,16 +294,39 @@ const Chronicles = () => {
                                 decoding="async"
                             />
                             <figcaption className="dark-caption">
-                                <p>L'ingénierie sismique et thermique de l'architecture tibétaine.</p>
-                                <p>L'architecture n'est pas guidée par l'esthétique pure, mais par une stricte nécessité de survie géologique face aux séismes et vents extrêmes.</p>
-                                <span className="img-credit"><span>Credit</span> Tibet Heritage Fund / UNESCO</span>
+                                <p>
+                                    L'ingénierie sismique et thermique de
+                                    l'architecture tibétaine.
+                                </p>
+                                <p>
+                                    L'architecture n'est pas guidée par
+                                    l'esthétique pure, mais par une stricte
+                                    nécessité de survie géologique face aux
+                                    séismes et vents extrêmes.
+                                </p>
+                                <span className="img-credit">
+                                    (Crédit : Antoine Tavenaux - Le Potala via
+                                    Wikimedia Commons)
+                                </span>
                             </figcaption>
                         </figure>
 
                         <div className="narrative-text-block">
                             <h3>La Physique de la Forteresse</h3>
-                            <p>Bâtir sur le plateau tibétain implique de composer avec des contraintes majeures : une forte activité sismique, des vents violents, une amplitude thermique extrême et la rareté du bois.</p>
-                            <p>Le résultat est le <strong>Dzong</strong> (forteresse-monastère) et les habitations en pisé. Leur caractéristique la plus frappante est la géométrie trapézoïdale : des murs massifs à la base qui s'affinent vers le sommet.</p>
+                            <p>
+                                Bâtir sur le plateau tibétain implique de
+                                composer avec des contraintes majeures : une
+                                forte activité sismique, des vents violents, une
+                                amplitude thermique extrême et la rareté du
+                                bois.
+                            </p>
+                            <p>
+                                Le résultat est le <strong>Dzong</strong>{" "}
+                                (forteresse-monastère) et les habitations en
+                                pisé. Leur caractéristique la plus frappante est
+                                la géométrie trapézoïdale : des murs massifs à
+                                la base qui s'affinent vers le sommet.
+                            </p>
                             <figure className="inline-img-figure">
                                 <img
                                     src={image6}
@@ -207,30 +335,51 @@ const Chronicles = () => {
                                     loading="lazy"
                                     decoding="async"
                                 />
-                                <figcaption className="img-credit"><span>Source</span> Archive Bureau of Cultural Relics / Lhasa</figcaption>
+                                <span className="img-credit">
+                                    (Crédit : @nomadtibet via Instagram)
+                                </span>
                             </figure>
                         </div>
 
                         <div className="resource-dossier">
                             <div className="dossier-header">
                                 <h3>Principes Mécaniques</h3>
-                                <p>La réduction des forces de cisaillement et l'optimisation thermique au cœur de la conception architecturale.</p>
+                                <p>
+                                    La réduction des forces de cisaillement et
+                                    l'optimisation thermique au cœur de la
+                                    conception architecturale.
+                                </p>
                             </div>
                             <div className="dossier-cards grid-2">
                                 <div className="dossier-card box-style">
                                     <span className="card-tag">Structure</span>
                                     <h4>Sismique</h4>
-                                    <p>L'inclinaison des murs (10 à 20 degrés vers l'intérieur) abaisse le centre de gravité, dispersant les ondes vers la base massive au lieu de cisailler les étages.</p>
+                                    <p>
+                                        L'inclinaison des murs (10 à 20 degrés
+                                        vers l'intérieur) abaisse le centre de
+                                        gravité, dispersant les ondes vers la
+                                        base massive au lieu de cisailler les
+                                        étages.
+                                    </p>
                                 </div>
                                 <div className="dossier-card box-style">
                                     <span className="card-tag">Matériau</span>
                                     <h4>Thermique</h4>
-                                    <p>Murs en pisé épais accumulant le violent rayonnement diurne pour le restituer lentement pendant la nuit glaciale.</p>
+                                    <p>
+                                        Murs en pisé épais accumulant le violent
+                                        rayonnement diurne pour le restituer
+                                        lentement pendant la nuit glaciale.
+                                    </p>
                                 </div>
                                 <div className="dossier-card box-style full-width">
                                     <span className="card-tag">Finition</span>
                                     <h4>Pigments</h4>
-                                    <p>Les encadrements de fenêtres trapézoïdales sont peints en noir avec une suie absorbante pour maximiser l'apport solaire passif.</p>
+                                    <p>
+                                        Les encadrements de fenêtres
+                                        trapézoïdales sont peints en noir avec
+                                        une suie absorbante pour maximiser
+                                        l'apport solaire passif.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -243,12 +392,25 @@ const Chronicles = () => {
                                     loading="lazy"
                                     decoding="async"
                                 />
-                                <figcaption className="img-credit"><span>Credit</span> Traditional Arts & Crafts Association</figcaption>
+                                <span className="img-credit">
+                                    (Crédit : Hupeng via Dreamstime)
+                                </span>
                             </figure>
                             <div className="split-text">
                                 <h3>L'Économie des Matériaux</h3>
-                                <p>À plus de 4 000 mètres d'altitude, les arbres sont inexistants. Le bois est un luxe exclusivement réservé à l'ossature interne et acheminé à dos de yak.</p>
-                                <p>La toiture plate est réalisée selon la technique de l'Aga : des branchages recouverts d'argile damée, créant une fine croûte étanche et un espace de vie pour le séchage l'été.</p>
+                                <p>
+                                    À plus de 4 000 mètres d'altitude, les
+                                    arbres sont inexistants. Le bois est un luxe
+                                    exclusivement réservé à l'ossature interne
+                                    et acheminé à dos de yak.
+                                </p>
+                                <p>
+                                    La toiture plate est réalisée selon la
+                                    technique de l'Aga : des branchages
+                                    recouverts d'argile damée, créant une fine
+                                    croûte étanche et un espace de vie pour le
+                                    séchage l'été.
+                                </p>
                             </div>
                         </div>
                     </div>

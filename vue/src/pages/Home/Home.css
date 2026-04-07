@@ -1,5 +1,5 @@
 /* Home.css */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,300;0,400;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,300;0,400;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap");
 
 :root {
     --transition: cubic-bezier(0.22, 1, 0.36, 1);
@@ -47,7 +47,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    background-image: url('../../assets/home/1.avif');
+    background-image: url("../../assets/home/1.avif");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -57,22 +57,26 @@
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.4) 0%,
-            transparent 40%,
-            transparent 80%,
-            var(--bg-primary) 100%);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        transparent 40%,
+        transparent 80%,
+        var(--bg-primary) 100%
+    );
     z-index: 1;
     transition: background 0.8s ease;
 }
 
 /* Version thème clair : dégradé plus subtil et aérien */
 [data-theme="light"] .hero-overlay {
-    background: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0.15) 0%,
-            transparent 40%,
-            transparent 80%,
-            var(--bg-primary) 100%);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.15) 0%,
+        transparent 40%,
+        transparent 80%,
+        var(--bg-primary) 100%
+    );
 }
 
 .hero-content {
@@ -103,7 +107,7 @@
     font-size: 0.7rem;
     font-weight: 400;
     letter-spacing: 0.5em;
-    color: var(--accent, #A68966);
+    color: var(--accent, #a68966);
     text-transform: uppercase;
     display: block;
     margin-bottom: 2rem;
@@ -178,7 +182,6 @@
 }
 
 @keyframes scrollPulse {
-
     0%,
     100% {
         opacity: 0.3;
@@ -337,7 +340,6 @@
 }
 
 @keyframes phurba-pulse {
-
     0%,
     100% {
         filter: brightness(1) drop-shadow(0 0 0px rgba(166, 137, 102, 0));
